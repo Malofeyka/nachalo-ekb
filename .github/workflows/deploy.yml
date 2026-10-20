@@ -1,0 +1,42 @@
+name: Deploy to Production
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy to Reg.ru Server
+    runs-on: ubuntu-latest
+    steps:
+      - name: Execute deployment commands via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          port: ${{ secrets.SSH_PORT || 22 }}
+          script_stop: true
+          script: |
+            echo "🚀 Starting deploy for nachalo-ekb.ru..."
+            cd /var/www/u3475599/data/www/nachalo-ekb.ru
+            
+            echo "📥 Fetching latest commits from main..."
+            git fetch origin main
+            git reset --hard origin/main
+            
+            echo "📦 Checking and installing dependencies..."
+            /var/www/u3475599/data/flaskenv/bin/pip install -r requirements.txt --quiet
+            
+            echo "🗄️ Checking database..."
+            /var/www/u3475599/data/flaskenv/bin/python init_db.py
+            
+            echo "🔄 Reloading Phusion Passenger..."
+            mkdir -p tmp
+            touch tmp/restart.txt
+            touch passenger_wsgi.py
+            
+            echo "✅ Deployment finished successfully!"

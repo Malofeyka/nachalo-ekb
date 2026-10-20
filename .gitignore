@@ -19,6 +19,10 @@ env/
 .venv/
 ENV/
 
-# System files
+# System & Server files
 .DS_Store
 Thumbs.db
+.htaccess
+tmp/
+cgi-bin/
+.restart*
