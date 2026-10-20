@@ -1,0 +1,229 @@
+{% extends "info/base.html" %}
+
+{% block title %}Материально-техническое обеспечение{% endblock %}
+
+{% block content %}
+<div class="info-section">
+    <h1>Материально-техническое обеспечение и оснащенность образовательного процесса</h1>
+
+    <div class="info-block">
+        <h2><i class="fa fa-door-open"></i> Оборудование учебных кабинетов</h2>
+        <table class="info-table">
+            <tr>
+                <th>Количество учебных кабинетов:</th>
+                <td>{{ site_facilities.rooms_count }} кабинетов</td>
+            </tr>
+            <tr>
+                <th>Общая площадь учебных помещений:</th>
+                <td>{{ site_facilities.total_area }} кв.м</td>
+            </tr>
+            <tr>
+                <th>Оснащенность:</th>
+                <td>
+                    <ul class="info-list">
+                        <li><i class="fa fa-check"></i> Парты ученические — {{ site_facilities.desks }} шт.</li>
+                        <li><i class="fa fa-check"></i> Стулья ученические — {{ site_facilities.chairs }} шт.</li>
+                        <li><i class="fa fa-check"></i> Стол преподавателя — {{ site_facilities.teacher_tables }} шт.
+                        </li>
+                        <li><i class="fa fa-check"></i> Интерактивные доски — {{ site_facilities.interactive_boards }}
+                            шт.</li>
+                        <li><i class="fa fa-check"></i> Проекторы — {{ site_facilities.projectors }} шт.</li>
+                        <li><i class="fa fa-check"></i> Компьютеры/ноутбуки — {{ site_facilities.computers }} шт.</li>
+                        <li><i class="fa fa-check"></i> Шкафы для хранения материалов — {{
+                            site_facilities.storage_cabinets }} шт.</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="info-block">
+        <h2><i class="fa fa-flask"></i> Объекты для проведения практических занятий</h2>
+        <table class="info-table">
+            <tr>
+                <th>Наименование:</th>
+                <td>Учебные классы для практических занятий</td>
+            </tr>
+            <tr>
+                <th>Количество:</th>
+                <td>{{ site_facilities.rooms_count }} помещений</td>
+            </tr>
+            <tr>
+                <th>Оснащение:</th>
+                <td>
+                    <ul class="info-list">
+                        <li><i class="fa fa-check"></i> Соробаны (японские счёты) — {{ site_facilities.sorobans }} шт.
+                        </li>
+                        <li><i class="fa fa-check"></i> Кубики Рубика (для спидкубинга) — {{
+                            site_facilities.rubiks_cubes }} шт.</li>
+                        <li><i class="fa fa-check"></i> Методические материалы</li>
+                        <li><i class="fa fa-check"></i> Рабочие тетради</li>
+                        <li><i class="fa fa-check"></i> Раздаточные материалы</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="info-block">
+        <h2><i class="fa fa-book"></i> Библиотека</h2>
+        <table class="info-table">
+            <tr>
+                <th>Наличие оборудованной библиотеки:</th>
+                <td>{{ site_facilities.has_accessible_environment }}</td>
+            </tr>
+            <tr>
+                <th>Библиотечный фонд:</th>
+                <td>{{ site_facilities.library_books }} экземпляров учебно-методической литературы</td>
+            </tr>
+            <tr>
+                <th>В том числе:</th>
+                <td>
+                    <ul class="info-list">
+                        <li><i class="fa fa-check"></i> Учебные пособия — {{ site_facilities.textbooks }} шт.</li>
+                        <li><i class="fa fa-check"></i> Методическая литература для преподавателей — {{
+                            site_facilities.methodical_books }} шт.</li>
+                        <li><i class="fa fa-check"></i> Детская художественная литература — {{
+                            site_facilities.childrens_literature }} шт.</li>
+                        <li><i class="fa fa-check"></i> Электронные образовательные ресурсы</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        <p class="info-note"><small>* Укажите актуальную информацию</small></p>
+    </div>
+
+    <div class="info-block">
+        <h2><i class="fa fa-futbol"></i> Объекты спорта</h2>
+        <p class="info-value">
+            Оборудованные объекты спорта отсутствуют
+        </p>
+        <p class="info-note">
+            <small>* В образовательном центре «Начало» специализированные спортивные объекты отсутствуют.
+                Физическая активность обучающихся обеспечивается в рамках программ (спидкубинг — развитие
+                моторики).</small>
+        </p>
+    </div>
+
+    <div class="info-block">
+        <h2><i class="fa fa-chalkboard"></i> Средства обучения и воспитания</h2>
+        <table class="info-table">
+            <tr>
+                <th>Наглядные пособия:</th>
+                <td>
+                    <ul class="info-list">
+                        <li><i class="fa fa-check"></i> Учебные плакаты</li>
+                        <li><i class="fa fa-check"></i> Карточки для обучения</li>
+                        <li><i class="fa fa-check"></i> Дидактические материалы</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Технические средства:</th>
+                <td>
+                    <ul class="info-list">
+                        <li><i class="fa fa-check"></i> Мультимедийный проектор</li>
+                        <li><i class="fa fa-check"></i> Интерактивная доска</li>
+                        <li><i class="fa fa-check"></i> Аудиосистема</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="info-block">
+        <h2><i class="fa fa-wifi"></i> Доступ к информационным системам и сетям</h2>
+        <table class="info-table">
+            <tr>
+                <th>Доступ к сети «Интернет»:</th>
+                <td>
+                    <i class="fa fa-check-circle" style="color: green;"></i> Имеется<br>
+                    <small>Скорость подключения: {{ site_facilities.internet_speed }} Мбит/с</small>
+                </td>
+            </tr>
+            <tr>
+                <th>Официальный сайт:</th>
+                <td><a href="https://nachalo-ekb.ru">https://nachalo-ekb.ru</a></td>
+            </tr>
+            <tr>
+                <th>Электронная почта:</th>
+                <td><a href="mailto:{{ site_contact.email }}">{{ site_contact.email }}</a></td>
+            </tr>
+            <tr>
+                <th>Wi-Fi для обучающихся:</th>
+                <td>{{ site_facilities.has_library }}</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="info-block">
+        <h2><i class="fa fa-laptop"></i> Электронные образовательные ресурсы</h2>
+        <p class="info-section-intro">
+            Перечень электронных образовательных ресурсов, к которым обеспечивается доступ обучающихся:
+        </p>
+
+        <table class="info-table">
+            <thead>
+                <tr>
+                    <th>Наименование ресурса</th>
+                    <th>Ссылка</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Онлайн-платформа для обучения</td>
+                    <td><a href="https://kidsplatform.ru">kidsplatform.ru</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="info-block">
+        <h2><i class="fa fa-wheelchair"></i> Доступная среда для инвалидов и лиц с ОВЗ</h2>
+
+        <h3>Обеспечение доступа в здания</h3>
+        <table class="info-table">
+            <tr>
+                <th>Пандусы:</th>
+                <td>{{ site_facilities.has_sports_objects }}</td>
+            </tr>
+            <tr>
+                <th>Лифты:</th>
+                <td>{{ site_facilities.has_sports_objects }}</td>
+            </tr>
+            <tr>
+                <th>Расширенные дверные проемы:</th>
+                <td>{{ site_facilities.has_accessible }}</td>
+            </tr>
+            <tr>
+                <th>Специальные санитарно-гигиенические помещения:</th>
+                <td>{{ site_facilities.has_sports_objects }}</td>
+            </tr>
+        </table>
+
+        <h3 style="margin-top: var(--spacing-md);">Специальные технические средства обучения</h3>
+        <table class="info-table">
+            <tr>
+                <th>Технические средства коллективного пользования:</th>
+                <td>—</td>
+            </tr>
+            <tr>
+                <th>Технические средства индивидуального пользования:</th>
+                <td>—</td>
+            </tr>
+        </table>
+
+        <p class="info-note" style="margin-top: var(--spacing-sm);">
+            <small>* Для получения подробной информации о доступной среде обращайтесь к администратору
+                по телефону <a href="tel:{{ site_contact.phone_raw }}">{{ site_contact.phone }}</a></small>
+        </p>
+    </div>
+
+    <div class="info-update-date">
+        <p>
+            <i class="fa fa-clock"></i>
+            Информация актуальна на: <strong>{{ site_org.data_actual_date }}</strong>
+        </p>
+    </div>
+</div>
+{% endblock %}

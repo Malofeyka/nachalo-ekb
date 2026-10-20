@@ -1,0 +1,188 @@
+{
+    "organization": {
+        "full_name": "Индивидуальный предприниматель Попов В. А. \"Образовательный центр Начало\"",
+        "short_name": "ИП Попов В. А.",
+        "registration_date": "21.09.2017",
+        "founder": "Попов Владимир Александрович",
+        "inn": "665802978341",
+        "ogrnip": "326965800258035",
+        "bank_name": "Филиал «Екатеринбургский» АО «Альфа-Банк»",
+        "bank_bik": "046577964",
+        "bank_account": "40802810738030018998",
+        "bank_correspondent": "30101810100000000964",
+        "year_founded": "2017",
+        "graduates_count": "2136",
+        "data_actual_date": "19.04.2026"
+    },
+    "license": {
+        "number": "Л035-01277-66/04675386",
+        "date": "20.03.2026"
+    },
+    "contact": {
+        "phone": "+7 (982) 675-60-70",
+        "phone_raw": "+79826756070",
+        "email": "nachalo-ekb@mail.ru",
+        "whatsapp": "+7 (982) 675-60-70",
+        "telegram": "https://t.me/nachalo_ekb",
+        "vk": "https://vk.com/nachalo_ekb"
+    },
+    "address": {
+        "city": "Екатеринбург",
+        "street": "ул. Анатолия Мехренцева",
+        "building": "46",
+        "zip": "620110",
+        "full": "г. Екатеринбург, ул. Анатолия Мехренцева, д. 46",
+        "short": "г. Екатеринбург, ул. Анатолия Мехренцева, д. 46",
+        "map_api_key": "8d4c6df2-8b5b-4170-9c01-7bddd60de5a5"
+    },
+    "social": {
+        "vk": "https://vk.com/club235384324",
+        "telegram": "t.me/nachalo_obrazovanie",
+        "whatsapp": "https://wa.me/79826756070"
+    },
+    "analytics": {
+        "yandex_metrika_id": "XXXXXX"
+    },
+    "prices": {
+        "english": {
+            "monthly": "9 600",
+            "single": "1200"
+        },
+        "mental": {
+            "monthly": "6000",
+            "single": "1500"
+        },
+        "reading": {
+            "monthly": "6000",
+            "single": "1500"
+        },
+        "memory": {
+            "monthly": "6 000",
+            "single": "1500"
+        },
+        "school": {
+            "monthly": "9 600",
+            "single": "1200"
+        },
+        "cubing": {
+            "monthly": "4 000",
+            "single": "1000"
+        },
+        "math": {
+            "monthly": "9 600",
+            "single": "1200"
+        },
+        "learn_reading": {
+            "single": "1200"
+        },
+        "chess": {
+            "single": "1000"
+        },
+        "afterschool": {
+            "single": "1100"
+        },
+        "summer_camp": {
+            "single": "12 500 ₽ за 5 дней"
+        },
+        "tutors": {
+            "monthly_from": "1 200",
+            "single_from": "1 200",
+            "single_to": "1 800"
+        }
+    },
+    "programs": {
+        "english": {
+            "vacancy_slots": "20"
+        },
+        "mental": {
+            "vacancy_slots": "20"
+        },
+        "reading": {
+            "vacancy_slots": "20"
+        },
+        "memory": {
+            "vacancy_slots": "20"
+        },
+        "school": {
+            "vacancy_slots": "20"
+        },
+        "cubing": {
+            "vacancy_slots": "20"
+        },
+        "math": {
+            "vacancy_slots": "20"
+        },
+        "learn_reading": {
+            "vacancy_slots": "20"
+        },
+        "chess": {
+            "vacancy_slots": "20"
+        },
+        "afterschool": {
+            "vacancy_slots": "10"
+        },
+        "summer_camp": {
+            "vacancy_slots": "20"
+        }
+    },
+    "teachers": [
+        {
+            "name": "",
+            "position": "",
+            "subject": "",
+            "university": "",
+            "specialty": "",
+            "qualification": "",
+            "degree": "Нет",
+            "title": "Нет",
+            "advanced_training": "...",
+            "retraining": "...",
+            "experience_years": "10",
+            "programs": ""
+        }
+    ],
+    "management": [
+        {
+            "name": "Попов Владимир Александрович",
+            "position": "Директор",
+            "phone": "+7 (982) 675-60-70",
+            "email": "vladimiryakovlev2007@gmail.com"
+        }
+    ],
+    "facilities": {
+        "rooms_count": "3",
+        "total_area": "97",
+        "desks": "18",
+        "chairs": "18",
+        "teacher_tables": "3",
+        "interactive_boards": "0",
+        "projectors": "0",
+        "computers": "1",
+        "storage_cabinets": "6",
+        "sorobans": "20",
+        "rubiks_cubes": "15",
+        "has_accessible_environment": "Нет",
+        "library_books": "30",
+        "textbooks": "150",
+        "methodical_books": "50",
+        "childrens_literature": "30",
+        "internet_speed": "100",
+        "has_library": "Есть",
+        "has_sports_objects": "Не имеются",
+        "has_accessible": "Нет",
+        "has_canteen": "Нет"
+    },
+    "documents": {
+        "charter_approval_date": "01.01.2020",
+        "rules_order_number": "5",
+        "rules_order_date": "01.03.2024",
+        "labor_rules_order_number": "6",
+        "labor_rules_order_date": "01.03.2024",
+        "self_exam_date": "01.09.2025",
+        "fhd_order_number": "20",
+        "fhd_order_date": "01.02.2026"
+    },
+    "policy": {
+        "update_date": "21.10.2026"
+    }
+}

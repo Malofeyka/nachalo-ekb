@@ -1,0 +1,192 @@
+{% extends "info/base.html" %}
+
+{% block title %}Основные сведения{% endblock %}
+
+{% block content %}
+<div class="info-section">
+    <h1>Основные сведения</h1>
+    
+    <div class="info-block">
+        <h2><i class="fa fa-info-circle"></i> Полное и сокращенное наименование</h2>
+        <table class="info-table">
+            <tr>
+                <th>Полное наименование:</th>
+                <td>{{ site_org.full_name }}</td>
+            </tr>
+            <tr>
+                <th>Сокращенное наименование:</th>
+                <td>{{ site_org.short_name }}</td>
+            </tr>
+        </table>
+    </div>
+    
+    <div class="info-block">
+        <h2><i class="fa fa-calendar"></i> Дата создания образовательной организации</h2>
+        <p class="info-value">{{ site_org.registration_date }} (дата регистрации юридического лица)</p>
+    </div>
+    
+    <div class="info-block">
+        <h2><i class="fa fa-users"></i> Учредитель образовательной организации</h2>
+        <table class="info-table">
+            <tr>
+                <th>Учредитель:</th>
+                <td>{{ site_org.founder }}</td>
+            </tr>
+            <tr>
+                <th>Доля учредителя:</th>
+                <td>{{ site_org.founder_share }}</td>
+            </tr>
+        </table>
+    </div>
+    
+    <div class="info-block">
+        <h2><i class="fa fa-map-marker-alt"></i> Место нахождения образовательной организации</h2>
+        <table class="info-table">
+            <tr>
+                <th>Юридический адрес:</th>
+                <td>{{ site_address.full }}</td>
+            </tr>
+            <tr>
+                <th>Почтовый адрес:</th>
+                <td>{{ site_address.full }}</td>
+            </tr>
+        </table>
+    </div>
+    
+    <div class="info-block">
+        <h2><i class="fa fa-clock"></i> Режим и график работы</h2>
+        <table class="info-table">
+            <tr>
+                <th>Режим работы:</th>
+                <td>
+                    Понедельник - Пятница: 09:00 - 20:00<br>
+                    Суббота: 10:00 - 17:00<br>
+                    Воскресенье: выходной
+                </td>
+            </tr>
+            <tr>
+                <th>График работы администрации:</th>
+                <td>
+                    Понедельник - Пятница: 09:00 - 18:00 (обед 13:00 - 14:00)<br>
+                    Суббота, Воскресенье: выходной
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+    <div class="info-block">
+        <h2><i class="fa fa-phone"></i> Контактные телефоны и адреса электронной почты</h2>
+        <table class="info-table">
+            <tr>
+                <th>Телефон:</th>
+                <td><a href="tel:{{ site_contact.phone }}">{{ site_contact.phone }}</a></td>
+            </tr>
+            <tr>
+                <th>Телефон для справок:</th>
+                <td><a href="tel:{{ site_contact.phone }}">{{ site_contact.phone }}</a></td>
+            </tr>
+            <tr>
+                <th>Электронная почта:</th>
+                <td><a href="mailto:{{ site_contact.email }}">{{ site_contact.email }}</a></td>
+            </tr>
+            <tr>
+                <th>Официальный сайт:</th>
+                <td><a href="https://nachalo-ekb.ru">https://nachalo-ekb.ru</a></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="info-block">
+        <h2><i class="fa fa-map-pin"></i> Места осуществления образовательной деятельности</h2>
+        <table class="info-table">
+            <tr>
+                <th>Основной адрес:</th>
+                <td>
+                    {{ site_address.full }}<!-- <br>
+                    <small>Сведения не включаются в запись в реестре лицензий</small> -->
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- <div class="info-block">
+        <h2><i class="fa fa-certificate"></i> Лицензия на осуществление образовательной деятельности</h2>
+        <table class="info-table">
+            <tr>
+                <th>Номер лицензии:</th>
+                <td>{{ site_license.number }}</td>
+            </tr>
+            <tr>
+                <th>Дата выдачи:</th>
+                <td>{{ site_license.date }}</td>
+            </tr>
+            <tr>
+                <th>Кем выдана:</th>
+                <td>Министерство образования и молодежной политики Свердловской области</td>
+            </tr>
+            <tr>
+                <th>Срок действия:</th>
+                <td>Бессрочно</td>
+            </tr>
+            <tr>
+                <th>Документ:</th>
+                <td>
+                    <a href="{{ url_for('static', filename='docs/license.pdf') }}" class="btn-download" download>
+                        <i class="fa fa-file-pdf"></i> Скачать выписку из реестра лицензий (PDF)
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </div> -->
+
+    <div class="info-block">
+        <h2><i class="fa fa-check-circle"></i> Государственная аккредитация</h2>
+        <p class="info-value">
+            [Информация о наличии или отсутствии государственной аккредитации.
+            Для дополнительного образования аккредитация не требуется.]
+        </p>
+        <p class="info-note">
+            <small>Образовательный центр «Начало» реализует программы дополнительного образования,
+            которые не подлежат государственной аккредитации в соответствии с ФЗ-273.</small>
+        </p>
+    </div>
+
+    <div class="info-block">
+        <h2><i class="fa fa-qrcode"></i> Реквизиты организации</h2>
+        <table class="info-table">
+            <tr>
+                <th>ИНН:</th>
+                <td>{{ site_org.inn }}</td>
+            </tr>
+            <tr>
+                <th>КПП:</th>
+                <td>{{ site_org.kpp }}</td>
+            </tr>
+            <tr>
+                <th>ОГРНИП:</th>
+                <td>{{ site_org.ogrnip }}</td>
+            </tr>
+            <tr>
+                <th>ОКПО:</th>
+                <td>{{ site_org.okpo }}</td>
+            </tr>
+            <tr>
+                <th>Банковские реквизиты:</th>
+                <td>
+                    Банк: {{ site_org.bank_name }}<br>
+                    БИК: {{ site_org.bank_bik }}<br>
+                    Р/с: {{ site_org.bank_account }}<br>
+                    К/с: {{ site_org.bank_correspondent }}
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="info-update-date">
+        <p>
+            <i class="fa fa-clock"></i>
+            Информация актуальна на: <strong>{{ site_org.data_actual_date }}</strong>
+        </p>
+    </div>
+</div>
+{% endblock %}

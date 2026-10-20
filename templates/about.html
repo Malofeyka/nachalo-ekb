@@ -1,0 +1,82 @@
+{% extends "index.html" %}
+
+{% block title %}О центре — Образовательный центр «Начало»{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="page-header">
+    <div class="container">
+        <h1 class="page-title">О центре «Начало»</h1>
+        <p class="page-subtitle">
+            Интеллектуальное развитие детей в Екатеринбурге с {{ site_org.year_founded }} года
+        </p>
+    </div>
+</section>
+
+<!-- About Content -->
+<section class="about-section">
+    <div class="container">
+        <div class="about-content">
+            <h2>Наша миссия</h2>
+            <p class="about-lead">
+                Раскрыть потенциал каждого ребёнка через современные методики 
+                интеллектуального развития и создать прочную основу для будущих успехов в учёбе и жизни.
+            </p>
+            
+            <h2>О нас</h2>
+            <p>
+                Образовательный центр «Начало» — это команда опытных педагогов, объединённых общей целью: 
+                помочь детям от 5 до 16 лет развить свои способности, повысить успеваемость в школе 
+                и обрести уверенность в своих силах.
+            </p>
+            <p>
+                Мы работаем в Екатеринбурге с {{ site_org.year_founded }} года. За это время мы выпустили более {{ site_org.graduates_count }} учеников, 
+                многие из которых стали призёрами олимпиад и конкурсов.
+            </p>
+            
+            <h2>Наши ценности</h2>
+            <div class="values-grid">
+                <div class="value-item">
+                    <i class="fa fa-heart"></i>
+                    <h3>Забота</h3>
+                    <p>Индивидуальный подход к каждому ребёнку</p>
+                </div>
+                <div class="value-item">
+                    <i class="fa fa-award"></i>
+                    <h3>Качество</h3>
+                    <p>Проверенные методики и опытные педагоги</p>
+                </div>
+                <div class="value-item">
+                    <i class="fa fa-users"></i>
+                    <h3>Команда</h3>
+                    <p>Поддержка и взаимопомощь в обучении</p>
+                </div>
+                <div class="value-item">
+                    <i class="fa fa-chart-line"></i>
+                    <h3>Развитие</h3>
+                    <p>Постоянное совершенствование программ</p>
+                </div>
+            </div>
+            
+            <!-- <h2>Лицензия и аккредитация</h2>
+            <p>
+                Образовательный центр «Начало» работает на основании лицензии на осуществление
+                образовательной деятельности № {{ site_license.number }} от {{ site_license.date }}.
+            </p>
+            <a href="{{ url_for('info_documents') }}" class="btn btn-primary">
+                <i class="fa fa-file-alt"></i> Посмотреть документы
+            </a> -->
+            
+            <h2>Наши партнёры</h2>
+            <div class="partners-grid">
+                <div class="partner-item">
+                    <img src="{{ url_for('static', filename='img/partners/partner1-placeholder.png') }}" alt="Партнёр 1">
+                </div>
+                <div class="partner-item">
+                    <img src="{{ url_for('static', filename='img/partners/partner2-placeholder.png') }}" alt="Партнёр 2">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

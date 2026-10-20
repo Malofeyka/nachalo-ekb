@@ -1,0 +1,25 @@
+{% extends "index.html" %}
+
+{% block title %}Ошибка сервера (500){% endblock %}
+
+{% block content %}
+<section class="error-section">
+    <div class="container">
+        <div class="error-content">
+            <h1 class="error-code">500</h1>
+            <h2 class="error-title">Внутренняя ошибка сервера</h2>
+            <p class="error-text">
+                Произошла непредвиденная ошибка. Пожалуйста, попробуйте позже.
+            </p>
+            <div class="error-actions">
+                <a href="{{ url_for('index') }}" class="btn btn-primary">
+                    <i class="fa fa-home"></i> На главную
+                </a>
+                <a href="{{ url_for('contacts') }}" class="btn btn-outline">
+                    <i class="fa fa-envelope"></i> Связаться с нами
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

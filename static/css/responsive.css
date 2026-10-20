@@ -1,0 +1,233 @@
+/* ========================================
+   Образовательный центр «Начало»
+   Адаптивные стили (responsive.css)
+   ======================================== */
+
+/* --- Tablet (992px and below) --- */
+@media (max-width: 992px) {
+    :root {
+        --header-height: 70px;
+    }
+    
+    .header-main-inner {
+        height: var(--header-height);
+    }
+    
+    .header-nav {
+        display: none;
+    }
+    
+    .header-callback {
+        display: none;
+    }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    /* Mobile Menu */
+    .header-nav.active {
+        display: block;
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+        width: 100%;
+        background-color: white;
+        box-shadow: var(--shadow-md);
+        padding: var(--spacing-md);
+    }
+    
+    .main-menu {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .main-menu a {
+        display: block;
+        padding: var(--spacing-sm);
+    }
+    
+    .menu-info-item {
+        margin-top: var(--spacing-sm);
+        padding-top: var(--spacing-sm);
+        border-top: 1px solid var(--color-border);
+    }
+    
+    /* Hero */
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+    }
+    
+    /* Lead Form */
+    .lead-wrapper {
+        grid-template-columns: 1fr;
+    }
+    
+    .lead-content {
+        padding: 0;
+    }
+    
+    /* Footer */
+    .footer-col-full {
+        grid-column: auto;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* --- Mobile (768px and below) --- */
+@media (max-width: 768px) {
+    :root {
+        --font-size-base: 15px;
+    }
+    
+    .header-top {
+        display: none;
+    }
+    
+    .hero-section {
+        padding: var(--spacing-lg) 0;
+        min-height: auto;
+    }
+    
+    .hero-title {
+        font-size: 1.75rem;
+    }
+    
+    .hero-features {
+        flex-direction: column;
+        gap: var(--spacing-xs);
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .programs-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .advantages-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .advantage-item {
+        padding: var(--spacing-sm);
+    }
+    
+    .lead-section {
+        padding: var(--spacing-lg) 0;
+    }
+    
+    .lead-wrapper {
+        padding: var(--spacing-md);
+    }
+    
+    .lead-title {
+        font-size: 1.5rem;
+    }
+    
+    .lead-benefits {
+        grid-template-columns: 1fr;
+    }
+    
+    .map-container {
+        height: 300px;
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    .footer-col {
+        text-align: center;
+    }
+    
+    .footer-logo {
+        justify-content: center;
+    }
+    
+    .footer-socials {
+        justify-content: center;
+    }
+    
+    .footer-contacts li {
+        justify-content: center;
+    }
+}
+
+/* --- Small Mobile (480px and below) --- */
+@media (max-width: 480px) {
+    :root {
+        --font-size-base: 14px;
+        --spacing-lg: 32px;
+        --spacing-xl: 48px;
+    }
+    
+    .hero-title {
+        font-size: 1.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .lead-title {
+        font-size: 1.25rem;
+    }
+    
+    .modal-content {
+        padding: var(--spacing-md);
+        width: 95%;
+    }
+    
+    .weaksighted-toggle {
+        top: 80px;
+        right: 10px;
+    }
+    
+    .weaksighted-btn {
+        width: 42px;
+        height: 42px;
+        font-size: 1.2rem;
+    }
+}
+
+/* --- Print Styles --- */
+@media print {
+    .site-header,
+    .site-footer,
+    .weaksighted-toggle,
+    .modal,
+    .lead-section,
+    .map-section {
+        display: none !important;
+    }
+    
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+    }
+    
+    a {
+        color: #000;
+        text-decoration: underline;
+    }
+    
+    .programs-section,
+    .advantages-section {
+        padding: 20px 0;
+    }
+}

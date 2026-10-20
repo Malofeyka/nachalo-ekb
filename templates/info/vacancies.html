@@ -1,0 +1,134 @@
+{% extends "info/base.html" %}
+
+{% block title %}Вакантные места для приема{% endblock %}
+
+{% block content %}
+<div class="info-section">
+    <h1>Вакантные места для приема (перевода) обучающихся</h1>
+    
+    <p class="info-section-intro">
+        Информация о количестве вакантных мест для приема (перевода) по образовательным программам
+    </p>
+    
+    <div class="info-block">
+        <h2><i class="fa fa-door-open"></i> Вакантные места на 2025/2026 учебный год</h2>
+        
+        <table class="info-table">
+            <thead>
+                <tr>
+                    <th>Наименование программы</th>
+                    <th>Финансирование</th>
+                    <th>Вакантные места</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Английский язык</td>
+                    <td>За счет средств физических/юридических лиц</td>
+                    <td>{{ site_programs.english.vacancy_slots }}</td>
+                </tr>
+                <tr>
+                    <td>Ментальная арифметика</td>
+                    <td>За счет средств физических/юридических лиц</td>
+                    <td>{{ site_programs.english.vacancy_slots }}</td>
+                </tr>
+                <tr>
+                    <td>Скорочтение</td>
+                    <td>За счет средств физических/юридических лиц</td>
+                    <td>{{ site_programs.english.vacancy_slots }}</td>
+                </tr>
+                <tr>
+                    <td>Развитие памяти</td>
+                    <td>За счет средств физических/юридических лиц</td>
+                    <td>{{ site_programs.english.vacancy_slots }}</td>
+                </tr>
+                <tr>
+                    <td>Подготовка к школе</td>
+                    <td>За счет средств физических/юридических лиц</td>
+                    <td>{{ site_programs.english.vacancy_slots }}</td>
+                </tr>
+                <tr>
+                    <td>Спидкубинг</td>
+                    <td>За счет средств физических/юридических лиц</td>
+                    <td>{{ site_programs.english.vacancy_slots }}</td>
+                </tr>
+                <tr>
+                    <td>Суперматематика</td>
+                    <td>За счет средств физических/юридических лиц</td>
+                    <td>{{ site_programs.english.vacancy_slots }}</td>
+                </tr>
+                <tr>
+                    <td>Репетиторы (подготовка к ОГЭ/ЕГЭ)</td>
+                    <td>За счет средств физических/юридических лиц</td>
+                    <td>{{ site_programs.english.vacancy_slots }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="info-block">
+        <h2><i class="fa fa-info-circle"></i> Информация о финансировании</h2>
+        <table class="info-table">
+            <tr>
+                <th>За счет бюджетных ассигнований федерального бюджета:</th>
+                <td>Не финансируется</td>
+            </tr>
+            <tr>
+                <th>За счет бюджетов субъектов Российской Федерации:</th>
+                <td>Не финансируется</td>
+            </tr>
+            <tr>
+                <th>За счет местных бюджетов:</th>
+                <td>Не финансируется</td>
+            </tr>
+            <tr>
+                <th>По договорам об образовании за счет средств физических и (или) юридических лиц:</th>
+                <td>{{ site_org.graduates_count }} вакантных мест</td>
+            </tr>
+        </table>
+    </div>
+    
+    <div class="info-block">
+        <h2><i class="fa fa-clipboard-list"></i> Порядок приема</h2>
+        <p class="info-value">
+            Прием обучающихся в образовательный центр «Начало» осуществляется на основании заявления 
+            родителя (законного представителя) и заключения договора об образовании.
+        </p>
+        <p class="info-value" style="margin-top: var(--spacing-sm);">
+            Для зачисления необходимо:
+        </p>
+        <ul class="info-list" style="margin-top: var(--spacing-sm);">
+            <li><i class="fa fa-check"></i> Заполнить заявку на сайте или позвонить по телефону</li>
+            <li><i class="fa fa-check"></i> Посетить пробное занятие (бесплатно)</li>
+            <li><i class="fa fa-check"></i> Предоставить копию свидетельства о рождении/паспорта</li>
+            <li><i class="fa fa-check"></i> Заключить договор и оплатить обучение</li>
+        </ul>
+    </div>
+    
+    <div class="info-block">
+        <h2><i class="fa fa-exchange-alt"></i> Перевод обучающихся</h2>
+        <p class="info-value">
+            Перевод обучающихся из других образовательных организаций осуществляется индивидуально 
+            после собеседования с педагогом и определения текущего уровня знаний.
+        </p>
+    </div>
+    
+    <div class="info-notice">
+        <h3><i class="fa fa-phone"></i> Запись на обучение</h3>
+        <p>
+            Для получения актуальной информации о наличии свободных мест в группах
+            обращайтесь к администратору по телефону:
+        </p>
+        <p style="margin-top: var(--spacing-sm);">
+            <strong><a href="tel:{{ site_contact.phone_raw }}">{{ site_contact.phone }}</a></strong>
+        </p>
+    </div>
+    
+    <div class="info-update-date">
+        <p>
+            <i class="fa fa-clock"></i> 
+            Информация актуальна на: <strong>{{ site_org.data_actual_date }}</strong>
+        </p>
+    </div>
+</div>
+{% endblock %}

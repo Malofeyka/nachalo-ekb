@@ -1,0 +1,206 @@
+{% extends "info/base.html" %}
+
+{% block title %}Документы{% endblock %}
+
+{% block content %}
+<div class="info-section">
+    <h1>Документы</h1>
+    <p class="info-section-intro">
+        В данном разделе размещены копии документов, предусмотренные Федеральным законом 
+        № 273-ФЗ «Об образовании в Российской Федерации» и приказом Рособрнадзора № 1493.
+    </p>
+    
+    <div class="info-block">
+        <h2><i class="fa fa-file-contract"></i> Устав образовательной организации</h2>
+        <div class="doc-item">
+            <div class="doc-icon">
+                <i class="fa fa-file-pdf"></i>
+            </div>
+            <div class="doc-info">
+                <h4>Устав ООО "ОЦ "Начало" (действующая редакция)</h4>
+                <p>Дата утверждения: {{ site_org.data_actual_date }}</p>
+                <a href="{{ url_for('static', filename='docs/charter.pdf') }}" class="btn-download" download>
+                    <i class="fa fa-download"></i> Скачать документ (PDF)
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="info-block">
+        <h2><i class="fa fa-book"></i> Правила внутреннего распорядка обучающихся</h2>
+        <div class="doc-item">
+            <div class="doc-icon">
+                <i class="fa fa-file-pdf"></i>
+            </div>
+            <div class="doc-info">
+                <h4>Правила внутреннего распорядка обучающихся</h4>
+                <p>Утверждены приказом № {{ site_documents.rules_order_number }} от {{ site_org.data_actual_date }}</p>
+                <a href="{{ url_for('static', filename='docs/student-rules.pdf') }}" class="btn-download" download>
+                    <i class="fa fa-download"></i> Скачать документ (PDF)
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="info-block">
+        <h2><i class="fa fa-briefcase"></i> Правила внутреннего трудового распорядка</h2>
+        <div class="doc-item">
+            <div class="doc-icon">
+                <i class="fa fa-file-pdf"></i>
+            </div>
+            <div class="doc-info">
+                <h4>Правила внутреннего трудового распорядка</h4>
+                <p>Утверждены приказом № {{ site_documents.rules_order_number }} от {{ site_org.data_actual_date }}</p>
+                <a href="{{ url_for('static', filename='docs/employee-rules.pdf') }}" class="btn-download" download>
+                    <i class="fa fa-download"></i> Скачать документ (PDF)
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="info-block">
+        <h2><i class="fa fa-handshake"></i> Коллективный договор</h2>
+        <div class="doc-item">
+            <div class="doc-icon">
+                <i class="fa fa-file-pdf"></i>
+            </div>
+            <div class="doc-info">
+                <h4>Коллективный договор на 2024-2026 гг.</h4>
+                <p>Заключен между работодателем и работниками</p>
+                <a href="{{ url_for('static', filename='docs/collective-agreement.pdf') }}" class="btn-download" download>
+                    <i class="fa fa-download"></i> Скачать документ (PDF)
+                </a>
+            </div>
+        </div>
+        <p class="info-note">
+            <small>* При наличии</small>
+        </p>
+    </div>
+    
+    <div class="info-block">
+        <h2><i class="fa fa-balance-scale"></i> Локальные нормативные акты</h2>
+        
+        <div class="doc-item">
+            <div class="doc-icon">
+                <i class="fa fa-file-pdf"></i>
+            </div>
+            <div class="doc-info">
+                <h4>Положение об образовательной деятельности</h4>
+                <a href="{{ url_for('static', filename='docs/education-provision.pdf') }}" class="btn-download" download>
+                    <i class="fa fa-download"></i> Скачать (PDF)
+                </a>
+            </div>
+        </div>
+        
+        <div class="doc-item">
+            <div class="doc-icon">
+                <i class="fa fa-file-pdf"></i>
+            </div>
+            <div class="doc-info">
+                <h4>Положение о формах, периодичности и порядке текущего контроля</h4>
+                <a href="{{ url_for('static', filename='docs/control-provision.pdf') }}" class="btn-download" download>
+                    <i class="fa fa-download"></i> Скачать (PDF)
+                </a>
+            </div>
+        </div>
+        
+        <div class="doc-item">
+            <div class="doc-icon">
+                <i class="fa fa-file-pdf"></i>
+            </div>
+            <div class="doc-info">
+                <h4>Положение о защите персональных данных</h4>
+                <a href="{{ url_for('static', filename='docs/privacy-provision.pdf') }}" class="btn-download" download>
+                    <i class="fa fa-download"></i> Скачать (PDF)
+                </a>
+            </div>
+        </div>
+        
+        <div class="doc-item">
+            <div class="doc-icon">
+                <i class="fa fa-file-pdf"></i>
+            </div>
+            <div class="doc-info">
+                <h4>Правила оказания платных образовательных услуг</h4>
+                <a href="{{ url_for('static', filename='docs/paid-services-provision.pdf') }}" class="btn-download" download>
+                    <i class="fa fa-download"></i> Скачать (PDF)
+                </a>
+            </div>
+        </div>
+        
+        <div class="doc-item">
+            <div class="doc-icon">
+                <i class="fa fa-file-pdf"></i>
+            </div>
+            <div class="doc-info">
+                <h4>Порядок оформления возникновения, приостановления и прекращения отношений</h4>
+                <a href="{{ url_for('static', filename='docs/relations-order.pdf') }}" class="btn-download" download>
+                    <i class="fa fa-download"></i> Скачать (PDF)
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="info-block">
+        <h2><i class="fa fa-clipboard-check"></i> Отчет о результатах самообследования</h2>
+        <div class="doc-item">
+            <div class="doc-icon">
+                <i class="fa fa-file-pdf"></i>
+            </div>
+            <div class="doc-info">
+                <h4>Отчет о самообследовании за 2023 год</h4>
+                <p>Утвержден приказом № {{ site_documents.rules_order_number }} от {{ site_org.data_actual_date }}</p>
+                <a href="{{ url_for('static', filename='docs/self-examination-2023.pdf') }}" class="btn-download" download>
+                    <i class="fa fa-download"></i> Скачать документ (PDF)
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="info-block">
+        <h2><i class="fa fa-exclamation-triangle"></i> Предписания органов госнадзора</h2>
+        <p class="info-value">
+            [Предписания органов, осуществляющих государственный контроль (надзор) в сфере образования, 
+            отчеты об исполнении таких предписаний — при наличии]
+        </p>
+        <p class="info-note">
+            <small>* На текущий момент предписания отсутствуют</small>
+        </p>
+    </div>
+    
+    <div class="info-block">
+        <h2><i class="fa fa-file-pdf"></i> Иные документы</h2>
+        
+        <div class="doc-item">
+            <div class="doc-icon">
+                <i class="fa fa-file-pdf"></i>
+            </div>
+            <div class="doc-info">
+                <h4>Политика обработки персональных данных</h4>
+                <a href="{{ url_for('static', filename='docs/privacy-policy.pdf') }}" class="btn-download" download>
+                    <i class="fa fa-download"></i> Скачать (PDF)
+                </a>
+            </div>
+        </div>
+        
+        <div class="doc-item">
+            <div class="doc-icon">
+                <i class="fa fa-file-pdf"></i>
+            </div>
+            <div class="doc-info">
+                <h4>Договор об образовании (образец)</h4>
+                <a href="{{ url_for('static', filename='docs/education-contract-sample.pdf') }}" class="btn-download" download>
+                    <i class="fa fa-download"></i> Скачать образец (PDF)
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="info-update-date">
+        <p>
+            <i class="fa fa-clock"></i> 
+            Информация актуальна на: <strong>{{ site_org.data_actual_date }}</strong>
+        </p>
+    </div>
+</div>
+{% endblock %}

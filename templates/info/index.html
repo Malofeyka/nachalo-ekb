@@ -1,0 +1,120 @@
+{% extends "info/base.html" %}
+
+{% block title %}Сведения об образовательной организации{% endblock %}
+
+{% block meta_description %}Официальная информация об образовательном центре «Начало» в соответствии с приказом №1493{% endblock %}
+
+{% block content %}
+<div class="info-page-header">
+    <h1>Сведения об образовательной организации</h1>
+    <p class="info-page-lead">
+        Официальная информация в соответствии с Федеральным законом № 273-ФЗ 
+        «Об образовании в Российской Федерации» и приказом Рособрнадзора № 1493 от 04.08.2023
+    </p>
+</div>
+
+<div class="info-cards-grid">
+    <a href="{{ url_for('info_basic') }}" class="info-card">
+        <div class="info-card-icon">
+            <i class="fa fa-building"></i>
+        </div>
+        <h3>Основные сведения</h3>
+        <p>Полное наименование, дата создания, учредители, адрес, режим работы, контакты<!--, лицензия--></p>
+    </a>
+
+    <a href="{{ url_for('info_structure') }}" class="info-card">
+        <div class="info-card-icon">
+            <i class="fa fa-sitemap"></i>
+        </div>
+        <h3>Структура и органы управления</h3>
+        <p>Структурные подразделения, органы управления образовательной организацией</p>
+    </a>
+
+    <a href="{{ url_for('info_documents') }}" class="info-card">
+        <div class="info-card-icon">
+            <i class="fa fa-file-alt"></i>
+        </div>
+        <h3>Документы</h3>
+        <p>Устав, <!--лицензии, -->правила внутреннего распорядка, локальные нормативные акты</p>
+    </a>
+
+    <a href="{{ url_for('info_education') }}" class="info-card">
+        <div class="info-card-icon">
+            <i class="fa fa-graduation-cap"></i>
+        </div>
+        <h3>Образование</h3>
+        <p>Реализуемые образовательные программы, учебные планы, численность обучающихся</p>
+    </a>
+
+    <a href="{{ url_for('info_management') }}" class="info-card">
+        <div class="info-card-icon">
+            <i class="fa fa-user-tie"></i>
+        </div>
+        <h3>Руководство</h3>
+        <p>Руководитель образовательной организации, его заместители, контакты</p>
+    </a>
+
+    <a href="{{ url_for('info_teachers') }}" class="info-card">
+        <div class="info-card-icon">
+            <i class="fa fa-chalkboard-teacher"></i>
+        </div>
+        <h3>Педагогический состав</h3>
+        <p>Персональный состав педагогических работников, квалификация, опыт работы</p>
+    </a>
+
+    <a href="{{ url_for('info_facilities') }}" class="info-card">
+        <div class="info-card-icon">
+            <i class="fa fa-school"></i>
+        </div>
+        <h3>Материально-техническое обеспечение</h3>
+        <p>Учебные кабинеты, оборудование, библиотеки, доступ к информационным системам</p>
+    </a>
+
+    <a href="{{ url_for('info_paid_services') }}" class="info-card">
+        <div class="info-card-icon">
+            <i class="fa fa-ruble-sign"></i>
+        </div>
+        <h3>Платные образовательные услуги</h3>
+        <p>Порядок оказания, образец договора, стоимость обучения по программам</p>
+    </a>
+
+    <a href="{{ url_for('info_finance') }}" class="info-card">
+        <div class="info-card-icon">
+            <i class="fa fa-chart-line"></i>
+        </div>
+        <h3>Финансово-хозяйственная деятельность</h3>
+        <p>Объём образовательной деятельности, поступление и расходование средств</p>
+    </a>
+
+    <a href="{{ url_for('info_vacancies') }}" class="info-card">
+        <div class="info-card-icon">
+            <i class="fa fa-door-open"></i>
+        </div>
+        <h3>Вакантные места для приема</h3>
+        <p>Количество вакантных мест для приема (перевода) по образовательным программам</p>
+    </a>
+</div>
+
+<div class="info-notice">
+    <h3><i class="fa fa-info-circle"></i> Важная информация</h3>
+    <p>
+        Данный раздел создан в соответствии с требованиями приказа Федеральной службы 
+        по надзору в сфере образования и науки № 1493 от 04.08.2023 «Об утверждении 
+        Требований к структуре официального сайта образовательной организации в 
+        информационно-телекоммуникационной сети "Интернет" и формату представления информации».
+    </p>
+    <p>
+        Информация размещена без дополнительной регистрации и доступна всем посетителям сайта.
+        Документы представлены в форматах, обеспечивающих возможность их сохранения и 
+        последующего поиска и копирования текста.
+    </p>
+</div>
+
+<div class="info-accessibility">
+    <h3><i class="fa fa-universal-access"></i> Доступная среда</h3>
+    <p>
+        Для лиц с ограниченными возможностями здоровья и инвалидов на сайте предусмотрена 
+        <button type="button" id="weaksighted-btn-inline" class="btn-link">версия для слабовидящих</button>.
+    </p>
+</div>
+{% endblock %}

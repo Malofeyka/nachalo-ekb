@@ -1,0 +1,164 @@
+{% extends "info/base.html" %}
+
+{% block title %}Образование{% endblock %}
+
+{% block content %}
+<div class="info-section">
+    <h1>Образование</h1>
+    
+    <div class="info-block">
+        <h2><i class="fa fa-book"></i> Реализуемые образовательные программы</h2>
+        <p class="info-section-intro">
+            Образовательный центр «Начало» реализует следующие дополнительные общеобразовательные программы:
+        </p>
+        
+        <table class="info-table">
+            <thead>
+                <tr>
+                    <th>Наименование программы</th>
+                    <th>Уровень образования</th>
+                    <th>Форма обучения</th>
+                    <th>Нормативный срок</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Английский язык</td>
+                    <td>Дополнительное образование</td>
+                    <td>Очная, очно-заочная (онлайн)</td>
+                    <td>1-4 года</td>
+                </tr>
+                <tr>
+                    <td>Ментальная арифметика</td>
+                    <td>Дополнительное образование</td>
+                    <td>Очная, очно-заочная (онлайн)</td>
+                    <td>2 года</td>
+                </tr>
+                <tr>
+                    <td>Скорочтение</td>
+                    <td>Дополнительное образование</td>
+                    <td>Очная, очно-заочная (онлайн)</td>
+                    <td>1 год</td>
+                </tr>
+                <tr>
+                    <td>Развитие памяти</td>
+                    <td>Дополнительное образование</td>
+                    <td>Очная, очно-заочная (онлайн)</td>
+                    <td>1 год</td>
+                </tr>
+                <tr>
+                    <td>Подготовка к школе</td>
+                    <td>Дополнительное образование (дошкольное)</td>
+                    <td>Очная</td>
+                    <td>1 год</td>
+                </tr>
+                <tr>
+                    <td>Спидкубинг</td>
+                    <td>Дополнительное образование</td>
+                    <td>Очная</td>
+                    <td>1-2 года</td>
+                </tr>
+                <tr>
+                    <td>Суперматематика</td>
+                    <td>Дополнительное образование</td>
+                    <td>Очная, очно-заочная (онлайн)</td>
+                    <td>1 учебный год</td>
+                </tr>
+                <tr>
+                    <td>Репетиторы (подготовка к ОГЭ/ЕГЭ)</td>
+                    <td>Дополнительное образование</td>
+                    <td>Очная, очно-заочная (онлайн)</td>
+                    <td>Индивидуально</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="info-block">
+        <h2><i class="fa fa-file-download"></i> Учебные планы и программы</h2>
+        
+        <div class="doc-item">
+            <div class="doc-icon">
+                <i class="fa fa-file-pdf"></i>
+            </div>
+            <div class="doc-info">
+                <h4>Учебный план "Английский язык"</h4>
+                <a href="{{ url_for('static', filename='docs/plan-english.pdf') }}" class="btn-download" download>
+                    <i class="fa fa-download"></i> Скачать (PDF)
+                </a>
+            </div>
+        </div>
+        
+        <div class="doc-item">
+            <div class="doc-icon">
+                <i class="fa fa-file-pdf"></i>
+            </div>
+            <div class="doc-info">
+                <h4>Учебный план "Ментальная арифметика"</h4>
+                <a href="{{ url_for('static', filename='docs/plan-mental.pdf') }}" class="btn-download" download>
+                    <i class="fa fa-download"></i> Скачать (PDF)
+                </a>
+            </div>
+        </div>
+        
+        <div class="doc-item">
+            <div class="doc-icon">
+                <i class="fa fa-file-pdf"></i>
+            </div>
+            <div class="doc-info">
+                <h4>Учебный план "Скорочтение"</h4>
+                <a href="{{ url_for('static', filename='docs/plan-reading.pdf') }}" class="btn-download" download>
+                    <i class="fa fa-download"></i> Скачать (PDF)
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="info-block">
+        <h2><i class="fa fa-users"></i> Численность обучающихся</h2>
+        <table class="info-table">
+            <tr>
+                <th>За счет бюджетных ассигнований:</th>
+                <td>Не финансируется</td>
+            </tr>
+            <tr>
+                <th>По договорам об образовании (за счет средств физических/юридических лиц):</th>
+                <td>{{ site_org.graduates_count }} человек (на {{ site_org.data_actual_date }})</td>
+            </tr>
+        </table>
+    </div>
+    
+    <div class="info-block">
+        <h2><i class="fa fa-globe"></i> Языки образования</h2>
+        <p class="info-value">
+            Обучение ведется на русском языке.
+        </p>
+        <a href="{{ url_for('static', filename='docs/language-education.pdf') }}" class="btn-download" download style="margin-top: var(--spacing-sm);">
+            <i class="fa fa-download"></i> Документ о языках образования (PDF)
+        </a>
+    </div>
+    
+    <div class="info-block">
+        <h2><i class="fa fa-chart-bar"></i> Результаты приема</h2>
+        <p class="info-value">
+            В связи с тем, что образовательный центр реализует программы дополнительного образования 
+            без проведения вступительных испытаний, информация о результатах приема не предусмотрена.
+        </p>
+    </div>
+    
+    <div class="info-block">
+        <h2><i class="fa fa-briefcase"></i> Трудоустройство выпускников</h2>
+        <p class="info-value">
+            Программы дополнительного образования не предполагают последующего трудоустройства.
+            Информация о трудоустройстве выпускников не ведется.
+        </p>
+    </div>
+    
+    <div class="info-update-date">
+        <p>
+            <i class="fa fa-clock"></i> 
+            Информация актуальна на: <strong>{{ site_org.data_actual_date }}</strong>
+        </p>
+    </div>
+</div>
+{% endblock %}

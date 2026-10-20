@@ -1,0 +1,174 @@
+{% extends "info/base.html" %}
+
+{% block title %}Платные образовательные услуги{% endblock %}
+
+{% block content %}
+<div class="info-section">
+    <h1>Платные образовательные услуги</h1>
+    
+    <div class="info-block">
+        <h2><i class="fa fa-file-contract"></i> Порядок оказания платных образовательных услуг</h2>
+        <div class="doc-item">
+            <div class="doc-icon">
+                <i class="fa fa-file-pdf"></i>
+            </div>
+            <div class="doc-info">
+                <h4>Положение о порядке оказания платных образовательных услуг</h4>
+                <p>Утверждено приказом № {{ site_documents.rules_order_number }} от {{ site_documents.rules_order_date }}</p>
+                <a href="{{ url_for('static', filename='docs/paid-services-provision.pdf') }}" class="btn-download" download>
+                    <i class="fa fa-download"></i> Скачать документ (PDF)
+                </a>
+            </div>
+        </div>
+        
+        <div class="doc-item">
+            <div class="doc-icon">
+                <i class="fa fa-file-pdf"></i>
+            </div>
+            <div class="doc-info">
+                <h4>Образец договора об оказании платных образовательных услуг</h4>
+                <a href="{{ url_for('static', filename='docs/education-contract-sample.pdf') }}" class="btn-download" download>
+                    <i class="fa fa-download"></i> Скачать образец договора (PDF)
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="info-block">
+        <h2><i class="fa fa-ruble-sign"></i> Стоимость обучения по образовательным программам</h2>
+        
+        <table class="info-table">
+            <thead>
+                <tr>
+                    <th>Наименование программы</th>
+                    <th>Формат обучения</th>
+                    <th>Стоимость (руб./месяц)</th>
+                    <th>Разовое занятие</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Английский язык</td>
+                    <td>Группа (2 раза в неделю)</td>
+                    <td>{{ site_prices.english.monthly }} ₽</td>
+                    <td>{{ site_prices.english.single }} ₽</td>
+                </tr>
+                <tr>
+                    <td>Ментальная арифметика</td>
+                    <td>Группа (2 раза в неделю)</td>
+                    <td>{{ site_prices.english.monthly }} ₽</td>
+                    <td>{{ site_prices.english.single }} ₽</td>
+                </tr>
+                <tr>
+                    <td>Скорочтение</td>
+                    <td>Группа (2 раза в неделю)</td>
+                    <td>{{ site_prices.english.monthly }} ₽</td>
+                    <td>{{ site_prices.english.single }} ₽</td>
+                </tr>
+                <tr>
+                    <td>Развитие памяти</td>
+                    <td>Группа (2 раза в неделю)</td>
+                    <td>{{ site_prices.english.monthly }} ₽</td>
+                    <td>{{ site_prices.english.single }} ₽</td>
+                </tr>
+                <tr>
+                    <td>Подготовка к школе</td>
+                    <td>Группа (2-3 раза в неделю)</td>
+                    <td>{{ site_prices.english.monthly }} ₽</td>
+                    <td>{{ site_prices.english.single }} ₽</td>
+                </tr>
+                <tr>
+                    <td>Спидкубинг</td>
+                    <td>Группа (2 раза в неделю)</td>
+                    <td>{{ site_prices.english.monthly }} ₽</td>
+                    <td>{{ site_prices.english.single }} ₽</td>
+                </tr>
+                <tr>
+                    <td>Суперматематика</td>
+                    <td>Группа / индивидуально</td>
+                    <td>{{ site_prices.english.monthly }} ₽/месяц</td>
+                    <td>{{ site_prices.english.single }} ₽</td>
+                </tr>
+                <tr>
+                    <td>Репетиторы (1-11 класс)</td>
+                    <td>Индивидуально</td>
+                    <td>от {{ site_prices.english.monthly }} ₽/месяц</td>
+                    <td>{{ site_prices.tutors.single_from }}-{{ site_prices.tutors.single_to }} ₽</td>
+                </tr>
+                <tr>
+                    <td>Подготовка к ОГЭ/ЕГЭ</td>
+                    <td>Индивидуально / Мини-группа</td>
+                    <td>от {{ site_prices.english.monthly }} ₽/месяц</td>
+                    <td>{{ site_prices.tutors.single_from }}-{{ site_prices.tutors.single_to }} ₽</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <p class="info-note" style="margin-top: var(--spacing-sm);">
+            <small>* Стоимость указана за 8 занятий в месяц. Актуальные цены уточняйте у администратора.</small>
+        </p>
+        
+        <div style="margin-top: var(--spacing-md);">
+            <a href="{{ url_for('static', filename='docs/price-list.pdf') }}" class="btn-download" download>
+                <i class="fa fa-download"></i> Скачать полный прайс-лист (PDF)
+            </a>
+        </div>
+    </div>
+    
+    <div class="info-block">
+        <h2><i class="fa fa-file-invoice"></i> Плата за присмотр и уход</h2>
+        <p class="info-value">
+            Образовательный центр «Начало» не реализует образовательные программы дошкольного образования 
+            в группах продленного дня. Плата за присмотр и уход не взимается.
+        </p>
+    </div>
+    
+    <div class="info-block">
+        <h2><i class="fa fa-percent"></i> Скидки и льготы</h2>
+        <table class="info-table">
+            <tr>
+                <th>Скидка на второго ребенка:</th>
+                <td>100%</td>
+            </tr>
+            <tr>
+                <th>Скидка на третьего и последующих:</th>
+                <td>100%</td>
+            </tr>
+            <tr>
+                <th>Скидка при оплате за полгода:</th>
+                <td>100%</td>
+            </tr>
+            <tr>
+                <th>Скидка при оплате за год:</th>
+                <td>100%</td>
+            </tr>
+        </table>
+    </div>
+    
+    <div class="info-block">
+        <h2><i class="fa fa-undo"></i> Возврат денежных средств</h2>
+        <p class="info-value">
+            Возврат денежных средств осуществляется в соответствии с Положением о порядке оказания 
+            платных образовательных услуг и действующим законодательством РФ.
+        </p>
+        <div class="doc-item" style="margin-top: var(--spacing-sm);">
+            <div class="doc-icon">
+                <i class="fa fa-file-pdf"></i>
+            </div>
+            <div class="doc-info">
+                <h4>Положение о возврате денежных средств</h4>
+                <a href="{{ url_for('static', filename='docs/refund-policy.pdf') }}" class="btn-download" download>
+                    <i class="fa fa-download"></i> Скачать (PDF)
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="info-update-date">
+        <p>
+            <i class="fa fa-clock"></i> 
+            Информация актуальна на: <strong>{{ site_org.data_actual_date }}</strong>
+        </p>
+    </div>
+</div>
+{% endblock %}

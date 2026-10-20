@@ -1,0 +1,150 @@
+{% extends "info/base.html" %}
+
+{% block title %}Структура и органы управления{% endblock %}
+
+{% block content %}
+<div class="info-section">
+    <h1>Структура и органы управления образовательной организацией</h1>
+    
+    <div class="info-block">
+        <h2><i class="fa fa-sitemap"></i> Структура образовательной организации</h2>
+        
+        <div class="structure-diagram">
+            <div class="structure-item top">
+                <h4>Директор</h4>
+                <p>{{ site_structure.director_name }}</p>
+            </div>
+
+            <div class="structure-connector"></div>
+
+            <div class="structure-items-row">
+                <div class="structure-item">
+                    <h4>Заместитель директора по УВР</h4>
+                    <p>{{ site_structure.deputy_name }}</p>
+                </div>
+                <div class="structure-item">
+                    <h4>Заместитель директора по развитию</h4>
+                    <p>{{ site_structure.deputy_name }}</p>
+                </div>
+                <div class="structure-item">
+                    <h4>Старший администратор</h4>
+                    <p>{{ site_structure.deputy_name }}</p>
+                </div>
+            </div>
+            
+            <div class="structure-connector"></div>
+            
+            <div class="structure-items-row">
+                <div class="structure-item">
+                    <h4>Преподаватели</h4>
+                    <p>{{ site_structure.teachers_count }} человек</p>
+                </div>
+                <div class="structure-item">
+                    <h4>Администраторы</h4>
+                    <p>{{ site_structure.admin_count }} человек</p>
+                </div>
+                <div class="structure-item">
+                    <h4>Бухгалтерия</h4>
+                    <p>{{ site_structure.admin_count }} человек</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="info-block">
+        <h2><i class="fa fa-building"></i> Структурные подразделения</h2>
+        
+        <table class="info-table">
+            <thead>
+                <tr>
+                    <th>Наименование</th>
+                    <th>Руководитель</th>
+                    <th>Адрес</th>
+                    <th>Контакты</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Учебный отдел</td>
+                    <td>{{ site_structure.director_name }}</td>
+                    <td>г. Екатеринбург, {{ site_address.street }}, д. {{ site_address.building }}</td>
+                    <td><a href="tel:{{ site_contact.phone_raw }}">{{ site_contact.phone }}</a></td>
+                </tr>
+                <tr>
+                    <td>Методический отдел</td>
+                    <td>{{ site_structure.director_name }}</td>
+                    <td>г. Екатеринбург, {{ site_address.street }}, д. {{ site_address.building }}</td>
+                    <td><a href="mailto:method@nachalo-ekb.ru">method@nachalo-ekb.ru</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="info-block">
+        <h2><i class="fa fa-users"></i> Органы управления</h2>
+        
+        <div class="info-block">
+            <h3>Единоличный исполнительный орган</h3>
+            <table class="info-table">
+                <tr>
+                    <th>Должность:</th>
+                    <td>Директор</td>
+                </tr>
+                <tr>
+                    <th>ФИО:</th>
+                    <td>{{ site_structure.deputy_name }}</td>
+                </tr>
+                <tr>
+                    <th>Полномочия:</th>
+                    <td>Осуществляет текущее руководство деятельностью организации, представляет интересы организации без доверенности</td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="info-block">
+            <h3>Коллегиальные органы управления</h3>
+            <p class="info-value">
+                В образовательном центре «Начало» коллегиальные органы управления не созданы.
+            </p>
+            <p class="info-note">
+                <small>* Для организаций дополнительного образования создание коллегиальных органов не является обязательным</small>
+            </p>
+        </div>
+    </div>
+    
+    <div class="info-block">
+        <h2><i class="fa fa-file-alt"></i> Положения о структурных подразделениях</h2>
+        
+        <div class="doc-item">
+            <div class="doc-icon">
+                <i class="fa fa-file-pdf"></i>
+            </div>
+            <div class="doc-info">
+                <h4>Положение об учебном отделе</h4>
+                <a href="{{ url_for('static', filename='docs/provision-study-dept.pdf') }}" class="btn-download" download>
+                    <i class="fa fa-download"></i> Скачать (PDF)
+                </a>
+            </div>
+        </div>
+        
+        <div class="doc-item">
+            <div class="doc-icon">
+                <i class="fa fa-file-pdf"></i>
+            </div>
+            <div class="doc-info">
+                <h4>Положение о методическом отделе</h4>
+                <a href="{{ url_for('static', filename='docs/provision-method-dept.pdf') }}" class="btn-download" download>
+                    <i class="fa fa-download"></i> Скачать (PDF)
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="info-update-date">
+        <p>
+            <i class="fa fa-clock"></i> 
+            Информация актуальна на: <strong>{{ site_org.data_actual_date }}</strong>
+        </p>
+    </div>
+</div>
+{% endblock %}

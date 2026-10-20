@@ -1,0 +1,47 @@
+{% extends "info/base.html" %}
+
+{% block title %}Педагогический состав{% endblock %}
+
+{% block content %}
+<div class="info-section">
+    <h1>Педагогический состав</h1>
+
+    {% for teacher in site_teachers %}
+    <div class="teacher-card">
+        <div class="teacher-photo">
+            <img src="{{ url_for('static', filename='img/photos/teacher-placeholder.jpg') }}" alt="Преподаватель" class="teacher-img">
+        </div>
+        <div class="teacher-info">
+            <h3>{{ teacher.name }}</h3>
+            <p class="teacher-position"><strong>Должность:</strong> {{ teacher.position }}</p>
+
+            <div class="teacher-details">
+                <p><strong>Преподаваемые предметы:</strong> {{ teacher.subject }}</p>
+                <p><strong>Образование:</strong> {{ teacher.university }}, {{ teacher.specialty }}, {{ teacher.qualification }}</p>
+                <p><strong>Ученая степень:</strong> {{ teacher.degree }}</p>
+                <p><strong>Ученое звание:</strong> {{ teacher.title }}</p>
+                <p><strong>Повышение квалификации (за последние 3 года):</strong><br>
+                {{ teacher.advanced_training }}</p>
+                <p><strong>Профессиональная переподготовка:</strong><br>
+                {{ teacher.retraining }}</p>
+                <p><strong>Опыт работы:</strong> {{ teacher.experience_years }} лет в профессиональной сфере</p>
+                <p><strong>Реализуемые программы:</strong> {{ teacher.programs }}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+    {% if not site_teachers %}
+    <div class="info-block">
+        <p class="info-note">Информация о педагогах будет добавлена позже.</p>
+    </div>
+    {% endif %}
+
+    <div class="info-update-date">
+        <p>
+            <i class="fa fa-clock"></i>
+            Информация актуальна на: <strong>{{ site_org.data_actual_date }}</strong>
+        </p>
+    </div>
+</div>
+{% endblock %}

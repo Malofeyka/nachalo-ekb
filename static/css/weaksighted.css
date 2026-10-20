@@ -1,0 +1,222 @@
+/* ========================================
+   Образовательный центр «Начало»
+   Версия для слабовидящих (weaksighted.css)
+   ======================================== */
+
+/* Этот файл активируется через JS при включении версии для слабовидящих */
+
+.weaksighted-active {
+    /* Увеличенные шрифты */
+    --font-size-base: 20px !important;
+    
+    /* Высокий контраст */
+    --color-text: #000000 !important;
+    --color-text-light: #333333 !important;
+    --color-bg: #FFFFFF !important;
+    --color-bg-light: #F0F0F0 !important;
+    --color-bg-dark: #FFFFFF !important;
+    
+    /* Чёрно-белая схема */
+    --color-primary: #000000 !important;
+    --color-primary-dark: #000000 !important;
+    --color-primary-light: #333333 !important;
+    --color-secondary: #000000 !important;
+    --color-secondary-dark: #000000 !important;
+    --color-accent: #000000 !important;
+    
+    /* Границы */
+    --color-border: #666666 !important;
+    --color-border-dark: #000000 !important;
+    
+    /* Увеличенные отступы */
+    --spacing-xs: 12px !important;
+    --spacing-sm: 20px !important;
+    --spacing-md: 32px !important;
+    --spacing-lg: 48px !important;
+    --spacing-xl: 72px !important;
+}
+
+.weaksighted-active body {
+    font-family: 'Verdana', 'Arial', sans-serif !important;
+    font-weight: 400 !important;
+    letter-spacing: 0.5px !important;
+    line-height: 1.8 !important;
+}
+
+.weaksighted-active h1,
+.weaksighted-active h2,
+.weaksighted-active h3,
+.weaksighted-active h4 {
+    font-weight: 700 !important;
+    margin-bottom: 16px !important;
+}
+
+.weaksighted-active h1 { font-size: 3rem !important; }
+.weaksighted-active h2 { font-size: 2.5rem !important; }
+.weaksighted-active h3 { font-size: 2rem !important; }
+.weaksighted-active h4 { font-size: 1.5rem !important; }
+
+.weaksighted-active a {
+    text-decoration: underline !important;
+    color: #000000 !important;
+}
+
+.weaksighted-active a:hover,
+.weaksighted-active a:focus {
+    background-color: #000000 !important;
+    color: #FFFFFF !important;
+}
+
+.weaksighted-active .btn {
+    border: 3px solid #000000 !important;
+    padding: 16px 32px !important;
+    font-size: 1.1rem !important;
+    font-weight: 700 !important;
+}
+
+.weaksighted-active .btn-primary,
+.weaksighted-active .btn-secondary {
+    background-color: #000000 !important;
+    color: #FFFFFF !important;
+}
+
+.weaksighted-active .btn-outline {
+    background-color: #FFFFFF !important;
+    color: #000000 !important;
+}
+
+.weaksighted-active img {
+    border: 2px solid #666666 !important;
+}
+
+.weaksighted-active .program-card,
+.weaksighted-active .advantage-item,
+.weaksighted-active .modal-content,
+.weaksighted-active .lead-wrapper {
+    border: 3px solid #000000 !important;
+    box-shadow: none !important;
+}
+
+.weaksighted-active input,
+.weaksighted-active select,
+.weaksighted-active textarea {
+    border: 2px solid #000000 !important;
+    padding: 16px !important;
+    font-size: 1rem !important;
+}
+
+.weaksighted-active input:focus,
+.weaksighted-active select:focus,
+.weaksighted-active textarea:focus {
+    outline: 3px solid #000000 !important;
+    outline-offset: 2px !important;
+}
+
+.weaksighted-active .form-checkbox input[type="checkbox"] {
+    width: 24px !important;
+    height: 24px !important;
+}
+
+.weaksighted-active .header-logo,
+.weaksighted-active .footer-logo {
+    font-size: 1.3rem !important;
+}
+
+.weaksighted-active .main-menu a {
+    font-size: 1.1rem !important;
+    padding: 12px !important;
+}
+
+.weaksighted-active .program-icon,
+.weaksighted-active .advantage-icon {
+    border: 3px solid #000000 !important;
+}
+
+.weaksighted-active .hero-section {
+    background: #000000 !important;
+    color: #FFFFFF !important;
+}
+
+.weaksighted-active .hero-feature i,
+.weaksighted-active .program-features i,
+.weaksighted-active .advantage-icon,
+.weaksighted-active .program-icon {
+    color: #000000 !important;
+}
+
+.weaksighted-active .lead-section {
+    background: #FFFFFF !important;
+    border: 3px solid #000000 !important;
+}
+
+.weaksighted-active .lead-title,
+.weaksighted-active .lead-text {
+    color: #000000 !important;
+}
+
+.weaksighted-active .site-footer {
+    background-color: #000000 !important;
+    color: #FFFFFF !important;
+}
+
+.weaksighted-active .footer-title {
+    color: #FFFFFF !important;
+}
+
+.weaksighted-active .footer-menu a,
+.weaksighted-active .footer-info-menu a,
+.weaksighted-active .footer-contacts a,
+.weaksighted-active .footer-desc,
+.weaksighted-active .footer-socials a {
+    color: #CCCCCC !important;
+}
+
+.weaksighted-active .footer-socials a:hover {
+    background-color: #FFFFFF !important;
+    color: #000000 !important;
+}
+
+.weaksighted-active .modal-close {
+    font-size: 2rem !important;
+    color: #000000 !important;
+}
+
+.weaksighted-active .success-icon {
+    color: #000000 !important;
+}
+
+.weaksighted-active .weaksighted-btn {
+    background-color: #000000 !important;
+    color: #FFFFFF !important;
+    border-color: #000000 !important;
+}
+
+/* Отключение анимаций */
+.weaksighted-active *,
+.weaksighted-active *::before,
+.weaksighted-active *::after {
+    animation-duration: 0s !important;
+    transition-duration: 0s !important;
+}
+
+/* Увеличенная область клика */
+.weaksighted-active button,
+.weaksighted-active a,
+.weaksighted-active input,
+.weaksighted-active select {
+    min-height: 48px !important;
+}
+
+/* Подчёркивание всех ссылок */
+.weaksighted-active a {
+    text-decoration: underline !important;
+    text-underline-offset: 3px !important;
+}
+
+/* Увеличенные иконки */
+.weaksighted-active i,
+.weaksighted-active .fa,
+.weaksighted-active .fab,
+.weaksighted-active .fas {
+    font-size: 1.2em !important;
+}

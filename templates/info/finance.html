@@ -1,0 +1,132 @@
+{% extends "info/base.html" %}
+
+{% block title %}Финансово-хозяйственная деятельность{% endblock %}
+
+{% block content %}
+<div class="info-section">
+    <h1>Финансово-хозяйственная деятельность</h1>
+    
+    <div class="info-block">
+        <h2><i class="fa fa-chart-pie"></i> Объем образовательной деятельности</h2>
+        <table class="info-table">
+            <thead>
+                <tr>
+                    <th>Показатель</th>
+                    <th>Значение</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Финансовое обеспечение за счет бюджетных ассигнований</td>
+                    <td>Не финансируется</td>
+                </tr>
+                <tr>
+                    <td>По договорам об образовании (физические лица)</td>
+                    <td>{{ site_finance.income_total }} рублей в год</td>
+                </tr>
+                <tr>
+                    <td>По договорам об образовании (юридические лица)</td>
+                    <td>{{ site_finance.income_paid }} рублей в год</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="info-block">
+        <h2><i class="fa fa-arrow-down"></i> Поступление финансовых и материальных средств</h2>
+        <p class="info-section-intro">
+            Информация о поступлении финансовых и материальных средств по итогам финансового года
+        </p>
+        
+        <table class="info-table">
+            <thead>
+                <tr>
+                    <th>Год</th>
+                    <th>Сумма поступлений (руб.)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2023</td>
+                    <td>{{ site_finance.income_total }}</td>
+                </tr>
+                <tr>
+                    <td>2022</td>
+                    <td>{{ site_finance.income_total }}</td>
+                </tr>
+                <tr>
+                    <td>2021</td>
+                    <td>{{ site_finance.income_total }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="info-block">
+        <h2><i class="fa fa-arrow-up"></i> Расходование финансовых и материальных средств</h2>
+        <p class="info-section-intro">
+            Информация о расходовании финансовых и материальных средств по итогам финансового года
+        </p>
+        
+        <table class="info-table">
+            <thead>
+                <tr>
+                    <th>Год</th>
+                    <th>Сумма расходов (руб.)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2023</td>
+                    <td>{{ site_finance.income_total }}</td>
+                </tr>
+                <tr>
+                    <td>2022</td>
+                    <td>{{ site_finance.income_total }}</td>
+                </tr>
+                <tr>
+                    <td>2021</td>
+                    <td>{{ site_finance.income_total }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="info-block">
+        <h2><i class="fa fa-file-alt"></i> План финансово-хозяйственной деятельности</h2>
+        
+        <div class="doc-item">
+            <div class="doc-icon">
+                <i class="fa fa-file-pdf"></i>
+            </div>
+            <div class="doc-info">
+                <h4>План ФХД на 2024 год</h4>
+                <p>Утвержден приказом № {{ site_documents.fhd_order_number }} от {{ site_org.data_actual_date }}</p>
+                <a href="{{ url_for('static', filename='docs/plan-fhd-2024.pdf') }}" class="btn-download" download>
+                    <i class="fa fa-download"></i> Скачать документ (PDF)
+                </a>
+            </div>
+        </div>
+        
+        <div class="doc-item">
+            <div class="doc-icon">
+                <i class="fa fa-file-pdf"></i>
+            </div>
+            <div class="doc-info">
+                <h4>План ФХД на 2023 год</h4>
+                <p>Утвержден приказом № {{ site_documents.fhd_order_number }} от {{ site_org.data_actual_date }}</p>
+                <a href="{{ url_for('static', filename='docs/plan-fhd-2023.pdf') }}" class="btn-download" download>
+                    <i class="fa fa-download"></i> Скачать документ (PDF)
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="info-update-date">
+        <p>
+            <i class="fa fa-clock"></i> 
+            Информация актуальна на: <strong>{{ site_org.data_actual_date }}</strong>
+        </p>
+    </div>
+</div>
+{% endblock %}

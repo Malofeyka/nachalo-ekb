@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Программы обучения в образовательном центре «Начало» — английский язык, ментальная арифметика, скорочтение и другие направления для детей.">
+    <title>Программы обучения — Образовательный центр «Начало»</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/weaksighted.css') }}" id="weaksighted-styles" disabled>
+    <link rel="icon" type="image/svg+xml" href="img/logo.svg">
+</head>
+<body class="page-body">
+
+    <div class="weaksighted-toggle">
+        <button type="button" id="weaksighted-btn" class="weaksighted-btn" aria-label="Версия для слабовидящих">
+            <i class="fa fa-eye"></i>
+            <span>👁</span>
+        </button>
+    </div>
+
+    <header class="site-header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-inner">
+                    <div class="header-contact">
+                        <a href="tel:{{ site_contact.phone_clean }}" class="header-phone">{{ site_contact.phone }}</a>
+                        <span class="header-city">{{ site_address.city }}</span>
+                    </div>
+                    <div class="header-socials">
+                        <a href="{{ site_social.vk }}" target="_blank" rel="noopener" aria-label="ВКонтакте"><i class="fab fa-vk"></i></a>
+                        <a href="{{ site_social.telegram }}" target="_blank" rel="noopener" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                        <a href="{{ site_social.whatsapp }}" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="header-main">
+            <div class="container">
+                <div class="header-main-inner">
+                    <a href="/" class="header-logo">
+                        <img src="{{ url_for('static', filename='img/logo.svg') }}" alt="Начало — Образовательный центр" class="logo-image">
+                        <span class="logo-text">Образовательный центр «Начало»</span>
+                    </a>
+                    
+                    <nav class="header-nav">
+                        <ul class="main-menu">
+                            <li><a href="/">Главная</a></li>
+                            <li><a href="/#programs" class="active">Программы</a></li>
+                            <li><a href="/#about">О центре</a></li>
+                            <li><a href="/#contacts">Контакты</a></li>
+                            <li class="menu-info-item">
+                                <a href="info/index.html" class="info-link">
+                                    <i class="fa fa-info-circle"></i>
+                                    Сведения об организации
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    
+                    <button class="header-callback btn btn-outline" data-modal="callback">
+                        Заказать звонок
+                    </button>
+                    
+                    <button class="hamburger" aria-label="Меню">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">Программы обучения</h1>
+                <p class="page-subtitle">
+                    Выберите направление для развития вашего ребёнка
+                </p>
+            </div>
+        </section>
+
+        <!-- Programs Detail Section -->
+        <section class="programs-detail-section">
+            <div class="container">
+                
+                <!-- Program 5: School Preparation -->
+                <article id="school" class="program-detail-card">
+                    <div class="program-detail-header">
+                        <div class="program-detail-icon">
+                            <i class="fa fa-graduation-cap"></i>
+                        </div>
+                        <div class="program-detail-info">
+                            <h2>Подготовка к школе</h2>
+                            <p class="program-age"><i class="fa fa-child"></i> 5-7 лет</p>
+                        </div>
+                    </div>
+                    
+                    <div class="program-detail-content">
+                        <div class="program-detail-text">
+                            <h3>О программе</h3>
+                            <p>
+                                Комплексная подготовка к школе: чтение, письмо, счёт, окружающий мир.
+                                Ребёнок будет готов к учёбе без стресса и слёз.
+                            </p>
+                            
+                            <h3>Что изучаем:</h3>
+                            <ul class="program-list">
+                                <li><i class="fa fa-check"></i> Обучение чтению (звуко-буквенный метод)</li>
+                                <li><i class="fa fa-check"></i> Прописи, развитие мелкой моторики</li>
+                                <li><i class="fa fa-check"></i> Счёт в пределах 20-100</li>
+                                <li><i class="fa fa-check"></i> Логические задачи</li>
+                                <li><i class="fa fa-check"></i> Окружающий мир</li>
+                                <li><i class="fa fa-check"></i> Навыки самоорганизации</li>
+                            </ul>
+                            
+                            <h3>Результат:</h3>
+                            <ul class="program-list">
+                                <li><i class="fa fa-star"></i> Уверенное чтение и письмо</li>
+                                <li><i class="fa fa-star"></i> Готовность к школьной программе</li>
+                                <li><i class="fa fa-star"></i> Психологическая готовность к школе</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="program-detail-sidebar">
+                            <div class="program-info-box">
+                                <h4>Формат обучения</h4>
+                                <ul>
+                                    <li><i class="fa fa-clock"></i> 2-3 раза в неделю</li>
+                                    <li><i class="fa fa-hourglass-half"></i> 45-60 минут</li>
+                                    <li><i class="fa fa-users"></i> Группы до 6 человек</li>
+                                    <li><i class="fa fa-laptop"></i> Офлайн (рекомендуется)</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="program-price-box">
+                                <h4>Стоимость</h4>
+                                <p class="price-main">{{ site_prices.school.monthly }} ₽ / месяц</p>
+                                <p class="price-note">8-12 занятий / абонемент</p>
+                                <ul class="price-options">
+                                    <li>Пробное занятие: <strong>бесплатно</strong></li>
+                                    <li>Разовое занятие: <strong>{{ site_prices.school.single }} ₽</strong></li>
+                                </ul>
+                            </div>
+
+                            <a href="#form" class="btn btn-primary btn-full">Записаться</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Program 1: English -->
+                <article id="english" class="program-detail-card">
+                    <div class="program-detail-header">
+                        <div class="program-detail-icon">
+                            <i class="fa fa-language"></i>
+                        </div>
+                        <div class="program-detail-info">
+                            <h2>Английский язык</h2>
+                            <p class="program-age"><i class="fa fa-child"></i> 5-16 лет</p>
+                        </div>
+                    </div>
+                    
+                    <div class="program-detail-content">
+                        <div class="program-detail-text">
+                            <h3>О программе</h3>
+                            <p>
+                                Современные методики изучения английского языка с акцентом на разговорную практику.
+                                Наши педагоги создают комфортную языковую среду, где дети начинают говорить с первого занятия.
+                            </p>
+                            
+                            <h3>Что изучаем:</h3>
+                            <ul class="program-list">
+                                <li><i class="fa fa-check"></i> Грамматика и лексика в игровой форме</li>
+                                <li><i class="fa fa-check"></i> Разговорная практика с носителями (онлайн)</li>
+                                <li><i class="fa fa-check"></i> Аудирование и произношение</li>
+                                <li><i class="fa fa-check"></i> Чтение и письмо</li>
+                                <li><i class="fa fa-check"></i> Подготовка к международным экзаменам (Cambridge)</li>
+                            </ul>
+                            
+                            <h3>Результат:</h3>
+                            <ul class="program-list">
+                                <li><i class="fa fa-star"></i> Уровень A1-A2 (в зависимости от возраста)</li>
+                                <li><i class="fa fa-star"></i> Свободное общение на бытовые темы</li>
+                                <li><i class="fa fa-star"></i> Уверенность в использовании языка</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="program-detail-sidebar">
+                            <div class="program-info-box">
+                                <h4>Формат обучения</h4>
+                                <ul>
+                                    <li><i class="fa fa-clock"></i> 2 раза в неделю</li>
+                                    <li><i class="fa fa-hourglass-half"></i> 60 минут (5-7 лет), 90 минут (8-16 лет)</li>
+                                    <li><i class="fa fa-users"></i> Группы до 8 человек</li>
+                                    <li><i class="fa fa-laptop"></i> Онлайн или офлайн</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="program-price-box">
+                                <h4>Стоимость</h4>
+                                <p class="price-main">{{ site_prices.english.monthly }} ₽ / месяц</p>
+                                <p class="price-note">8 занятий / абонемент</p>
+                                <ul class="price-options">
+                                    <li>Пробное занятие: <strong>бесплатно</strong></li>
+                                    <li>Разовое занятие: <strong>{{ site_prices.english.single }} ₽</strong></li>
+                                </ul>
+                            </div>
+                            
+                            <a href="#form" class="btn btn-primary btn-full">Записаться</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Program 2: Mental Arithmetic -->
+                <article id="mental" class="program-detail-card">
+                    <div class="program-detail-header">
+                        <div class="program-detail-icon">
+                            <i class="fa fa-calculator"></i>
+                        </div>
+                        <div class="program-detail-info">
+                            <h2>Ментальная арифметика</h2>
+                            <p class="program-age"><i class="fa fa-child"></i> 5-14 лет</p>
+                        </div>
+                    </div>
+
+                    <div class="program-detail-content">
+                        <div class="program-detail-text">
+                            <h3>О программе</h3>
+                            <p>
+                                Уникальная методика развития обоих полушарий мозга через обучение счёту на соробане
+                                (японские счёты) и в уме. Дети учатся считать быстрее калькулятора!
+                            </p>
+
+                            <h3>Что изучаем:</h3>
+                            <ul class="program-list">
+                                <li><i class="fa fa-check"></i> Счёт на соробане (абакус)</li>
+                                <li><i class="fa fa-check"></i> Ментальный счёт (в уме)</li>
+                                <li><i class="fa fa-check"></i> Развитие фотографической памяти</li>
+                                <li><i class="fa fa-check"></i> Концентрация внимания</li>
+                                <li><i class="fa fa-check"></i> Скорочтение (бонус)</li>
+                            </ul>
+
+                            <h3>Результат:</h3>
+                            <ul class="program-list">
+                                <li><i class="fa fa-star"></i> Счёт в уме многозначных чисел</li>
+                                <li><i class="fa fa-star"></i> Улучшение успеваемости по всем предметам</li>
+                                <li><i class="fa fa-star"></i> Развитие творческого и логического мышления</li>
+                            </ul>
+                        </div>
+
+                        <div class="program-detail-sidebar">
+                            <div class="program-info-box">
+                                <h4>Формат обучения</h4>
+                                <ul>
+                                    <li><i class="fa fa-clock"></i> 2 раза в неделю</li>
+                                    <li><i class="fa fa-hourglass-half"></i> 90 минут</li>
+                                    <li><i class="fa fa-users"></i> Группы до 8 человек</li>
+                                    <li><i class="fa fa-laptop"></i> Онлайн или офлайн</li>
+                                </ul>
+                            </div>
+
+                            <div class="program-price-box">
+                                <h4>Стоимость</h4>
+                                <p class="price-main">{{ site_prices.mental.monthly }} ₽ / месяц</p>
+                                <p class="price-note">8 занятий / абонемент</p>
+                                <ul class="price-options">
+                                    <li>Пробное занятие: <strong>бесплатно</strong></li>
+                                    <li>Разовое занятие: <strong>{{ site_prices.mental.single }} ₽</strong></li>
+                                </ul>
+                            </div>
+                            
+                            <a href="#form" class="btn btn-primary btn-full">Записаться</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Program 3: Speed Reading -->
+                <article id="reading" class="program-detail-card">
+                    <div class="program-detail-header">
+                        <div class="program-detail-icon">
+                            <i class="fa fa-book-open"></i>
+                        </div>
+                        <div class="program-detail-info">
+                            <h2>Скорочтение</h2>
+                            <p class="program-age"><i class="fa fa-child"></i> 6-14 лет</p>
+                        </div>
+                    </div>
+                    
+                    <div class="program-detail-content">
+                        <div class="program-detail-text">
+                            <h3>О программе</h3>
+                            <p>
+                                Авторская методика увеличения скорости чтения в 2-3 раза с сохранением
+                                и улучшением понимания прочитанного.
+                            </p>
+                            
+                            <h3>Что изучаем:</h3>
+                            <ul class="program-list">
+                                <li><i class="fa fa-check"></i> Упражнения для расширения поля зрения</li>
+                                <li><i class="fa fa-check"></i> Подавление проговаривания (субвокализации)</li>
+                                <li><i class="fa fa-check"></i> Развитие периферического зрения</li>
+                                <li><i class="fa fa-check"></i> Техники работы с текстом</li>
+                                <li><i class="fa fa-check"></i> Мнемотехники для запоминания</li>
+                            </ul>
+                            
+                            <h3>Результат:</h3>
+                            <ul class="program-list">
+                                <li><i class="fa fa-star"></i> Скорость чтения от 150 слов/мин</li>
+                                <li><i class="fa fa-star"></i> Улучшение понимания текста на 80%+</li>
+                                <li><i class="fa fa-star"></i> Успехи в учебе по всем предметам</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="program-detail-sidebar">
+                            <div class="program-info-box">
+                                <h4>Формат обучения</h4>
+                                <ul>
+                                    <li><i class="fa fa-clock"></i> 2 раза в неделю</li>
+                                    <li><i class="fa fa-hourglass-half"></i> 90 минут</li>
+                                    <li><i class="fa fa-users"></i> Группы до 8 человек</li>
+                                    <li><i class="fa fa-laptop"></i> Онлайн или офлайн</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="program-price-box">
+                                <h4>Стоимость</h4>
+                                <p class="price-main">{{ site_prices.reading.monthly }} ₽ / месяц</p>
+                                <p class="price-note">8 занятий / абонемент</p>
+                                <ul class="price-options">
+                                    <li>Пробное занятие: <strong>бесплатно</strong></li>
+                                    <li>Разовое занятие: <strong>{{ site_prices.reading.single }} ₽</strong></li>
+                                </ul>
+                            </div>
+
+                            <a href="#form" class="btn btn-primary btn-full">Записаться</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Program 4: Memory Development -->
+                <article id="memory" class="program-detail-card">
+                    <div class="program-detail-header">
+                        <div class="program-detail-icon">
+                            <i class="fa fa-brain"></i>
+                        </div>
+                        <div class="program-detail-info">
+                            <h2>Развитие памяти</h2>
+                            <p class="program-age"><i class="fa fa-child"></i> 6-14 лет</p>
+                        </div>
+                    </div>
+                    
+                    <div class="program-detail-content">
+                        <div class="program-detail-text">
+                            <h3>О программе</h3>
+                            <p>
+                                Мнемотехники — специальные приёмы для запоминания больших объёмов информации.
+                                Навык, который поможет в учёбе и жизни.
+                            </p>
+                            
+                            <h3>Что изучаем:</h3>
+                            <ul class="program-list">
+                                <li><i class="fa fa-check"></i> Метод ассоциаций</li>
+                                <li><i class="fa fa-check"></i> Дворец памяти (метод локусов)</li>
+                                <li><i class="fa fa-check"></i> Запоминание чисел, дат, формул</li>
+                                <li><i class="fa fa-check"></i> Запоминание текстов и стихов</li>
+                                <li><i class="fa fa-check"></i> Развитие внимания и концентрации</li>
+                            </ul>
+                            
+                            <h3>Результат:</h3>
+                            <ul class="program-list">
+                                <li><i class="fa fa-star"></i> Запоминание 50+ элементов за 5 минут</li>
+                                <li><i class="fa fa-star"></i> Улучшение успеваемости</li>
+                                <li><i class="fa fa-star"></i> Уверенность в своих силах</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="program-detail-sidebar">
+                            <div class="program-info-box">
+                                <h4>Формат обучения</h4>
+                                <ul>
+                                    <li><i class="fa fa-clock"></i> 2 раза в неделю</li>
+                                    <li><i class="fa fa-hourglass-half"></i> 90 минут</li>
+                                    <li><i class="fa fa-users"></i> Группы до 8 человек</li>
+                                    <li><i class="fa fa-laptop"></i> Онлайн или офлайн</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="program-price-box">
+                                <h4>Стоимость</h4>
+                                <p class="price-main">{{ site_prices.english.monthly }} ₽ / месяц</p>
+                                <p class="price-note">8 занятий / абонемент</p>
+                                <ul class="price-options">
+                                    <li>Пробное занятие: <strong>бесплатно</strong></li>
+                                    <li>Разовое занятие: <strong>{{ site_prices.english.single }} ₽</strong></li>
+                                </ul>
+                            </div>
+                            
+                            <a href="#form" class="btn btn-primary btn-full">Записаться</a>
+                        </div>
+                    </div>
+                </article>
+
+
+                <!-- Program 6: Speedcubing -->
+                <article id="cubing" class="program-detail-card">
+                    <div class="program-detail-header">
+                        <div class="program-detail-icon">
+                            <i class="fa fa-cube"></i>
+                        </div>
+                        <div class="program-detail-info">
+                            <h2>Спидкубинг</h2>
+                            <p class="program-age"><i class="fa fa-child"></i> 7-16 лет</p>
+                        </div>
+                    </div>
+                    
+                    <div class="program-detail-content">
+                        <div class="program-detail-text">
+                            <h3>О программе</h3>
+                            <p>
+                                Скоростная сборка кубика Рубика и других головоломок.
+                                Развивает моторику, логику, скорость мышления.
+                            </p>
+                            
+                            <h3>Что изучаем:</h3>
+                            <ul class="program-list">
+                                <li><i class="fa fa-check"></i> Базовая сборка 3x3</li>
+                                <li><i class="fa fa-check"></i> Метод CFOP (продвинутый)</li>
+                                <li><i class="fa fa-check"></i> Сборка 2x2, 4x4, 5x5</li>
+                                <li><i class="fa fa-check"></i> Другие головоломки (Pyraminx, Megaminx)</li>
+                                <li><i class="fa fa-check"></i> Участие в соревнованиях</li>
+                            </ul>
+                            
+                            <h3>Результат:</h3>
+                            <ul class="program-list">
+                                <li><i class="fa fa-star"></i> Сборка 3x3 за 30-60 секунд</li>
+                                <li><i class="fa fa-star"></i> Развитие пространственного мышления</li>
+                                <li><i class="fa fa-star"></i> Навыки выступления на соревнованиях</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="program-detail-sidebar">
+                            <div class="program-info-box">
+                                <h4>Формат обучения</h4>
+                                <ul>
+                                    <li><i class="fa fa-clock"></i> 2 раза в неделю</li>
+                                    <li><i class="fa fa-hourglass-half"></i> 90 минут</li>
+                                    <li><i class="fa fa-users"></i> Группы до 8 человек</li>
+                                    <li><i class="fa fa-laptop"></i> Офлайн (рекомендуется)</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="program-price-box">
+                                <h4>Стоимость</h4>
+                                <p class="price-main">{{ site_prices.english.monthly }} ₽ / месяц</p>
+                                <p class="price-note">8 занятий / абонемент</p>
+                                <ul class="price-options">
+                                    <li>Пробное занятие: <strong>бесплатно</strong></li>
+                                    <li>Разовое занятие: <strong>{{ site_prices.english.single }} ₽</strong></li>
+                                </ul>
+                            </div>
+                            
+                            <a href="#form" class="btn btn-primary btn-full">Записаться</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Program 7: Math -->
+                <article id="math" class="program-detail-card">
+                    <div class="program-detail-header">
+                        <div class="program-detail-icon">
+                            <i class="fa fa-square-root-alt"></i>
+                        </div>
+                        <div class="program-detail-info">
+                            <h2>Суперматематика</h2>
+                            <p class="program-age"><i class="fa fa-child"></i> 7-15 лет (1-9 класс)</p>
+                        </div>
+                    </div>
+
+                    <div class="program-detail-content">
+                        <div class="program-detail-text">
+                            <h3>О программе</h3>
+                            <p>
+                                Помогаем со школьной математикой 1-9 класс. Подготовка к ВПР (всероссийским проверочным работам).
+                                Индивидуальные и групповые занятия с опытными преподавателями.
+                            </p>
+
+                            <h3>Что делаем:</h3>
+                            <ul class="program-list">
+                                <li><i class="fa fa-check"></i> Разбор школьной программы 1-9 класс</li>
+                                <li><i class="fa fa-check"></i> Устранение пробелов в знаниях</li>
+                                <li><i class="fa fa-check"></i> Подготовка к ВПР</li>
+                                <li><i class="fa fa-check"></i> Решение задач и уравнений</li>
+                                <li><i class="fa fa-check"></i> Развитие логического мышления</li>
+                            </ul>
+
+                            <h3>Результат:</h3>
+                            <ul class="program-list">
+                                <li><i class="fa fa-star"></i> Улучшение оценок по математике</li>
+                                <li><i class="fa fa-star"></i> Уверенность при решении ВПР</li>
+                                <li><i class="fa fa-star"></i> Системные знания по школьной программе</li>
+                            </ul>
+                        </div>
+
+                        <div class="program-detail-sidebar">
+                            <div class="program-info-box">
+                                <h4>Формат обучения</h4>
+                                <ul>
+                                    <li><i class="fa fa-clock"></i> 1-2 раза в неделю</li>
+                                    <li><i class="fa fa-hourglass-half"></i> 60-90 минут</li>
+                                    <li><i class="fa fa-users"></i> Индивидуально / мини-группы до 4 чел.</li>
+                                    <li><i class="fa fa-laptop"></i> Офлайн или онлайн</li>
+                                </ul>
+                            </div>
+
+                            <div class="program-price-box">
+                                <h4>Стоимость</h4>
+                                <p class="price-main">{{ site_prices.english.monthly }} ₽ / месяц</p>
+                                <p class="price-note">8 занятий / абонемент</p>
+                                <ul class="price-options">
+                                    <li>Пробное занятие: <strong>бесплатно</strong></li>
+                                    <li>Разовое занятие: <strong>{{ site_prices.english.single }} ₽</strong></li>
+                                </ul>
+                            </div>
+
+                            <a href="#form" class="btn btn-primary btn-full">Записаться</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Program 8: Tutors -->
+                <article id="tutors" class="program-detail-card">
+                    <div class="program-detail-header">
+                        <div class="program-detail-icon">
+                            <i class="fa fa-chalkboard-teacher"></i>
+                        </div>
+                        <div class="program-detail-info">
+                            <h2>Репетиторы 1-9 класс</h2>
+                            <p class="program-age"><i class="fa fa-child"></i> 7-15 лет</p>
+                        </div>
+                    </div>
+
+                    <div class="program-detail-content">
+                        <div class="program-detail-text">
+                            <h3>О программе</h3>
+                            <p>
+                                Индивидуальные занятия с опытными репетиторами по школьным предметам.
+                                Помощь с домашней работой, подготовка к контрольным, ОГЭ.
+                            </p>
+
+                            <h3>Предметы:</h3>
+                            <ul class="program-list">
+                                <li><i class="fa fa-check"></i> Русский язык и литература</li>
+                                <li><i class="fa fa-check"></i> Математика (алгебра, геометрия)</li>
+                                <li><i class="fa fa-check"></i> Английский язык</li>
+                                <li><i class="fa fa-check"></i> Физика, химия, биология</li>
+                                <li><i class="fa fa-check"></i> История, обществознание</li>
+                                <li><i class="fa fa-check"></i> Подготовка к ОГЭ</li>
+                            </ul>
+
+                            <h3>Результат:</h3>
+                            <ul class="program-list">
+                                <li><i class="fa fa-star"></i> Улучшение успеваемости</li>
+                                <li><i class="fa fa-star"></i> Высокие баллы на экзаменах</li>
+                                <li><i class="fa fa-star"></i> Уверенность в знаниях</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="program-detail-sidebar">
+                            <div class="program-info-box">
+                                <h4>Формат обучения</h4>
+                                <ul>
+                                    <li><i class="fa fa-clock"></i> Индивидуально</li>
+                                    <li><i class="fa fa-hourglass-half"></i> 60-90 минут</li>
+                                    <li><i class="fa fa-user"></i> Персонально</li>
+                                    <li><i class="fa fa-laptop"></i> Онлайн или офлайн</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="program-price-box">
+                                <h4>Стоимость</h4>
+                                <p class="price-main">{{ site_prices.tutors.monthly_from }} ₽ / занятие</p>
+                                <p class="price-note">60-90 минут в зависимости от предмета</p>
+                                <ul class="price-options">
+                                    <li>Пакет 10 занятий: <strong>{{ site_prices.tutors.single_from }} ₽</strong></li>
+                                    <li>Подготовка к ЕГЭ/ОГЭ: <strong>{{ site_prices.tutors.single_to }} ₽</strong></li>
+                                </ul>
+                            </div>
+                            
+                            <a href="#form" class="btn btn-primary btn-full">Записаться</a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Lead Form Section -->
+        <section id="form" class="lead-section">
+            <div class="container">
+                <div class="lead-wrapper">
+                    <div class="lead-content">
+                        <h2 class="lead-title">Запишитесь на бесплатное пробное занятие</h2>
+                        <p class="lead-text">
+                            Оставьте заявку, и мы свяжемся с вами в течение 15 минут<br>
+                            для подбора удобного времени и программы
+                        </p>
+                        <ul class="lead-benefits">
+                            <li><i class="fa fa-check"></i> Бесплатно</li>
+                            <li><i class="fa fa-check"></i> 30 минут</li>
+                            <li><i class="fa fa-check"></i> Знакомство с педагогом</li>
+                            <li><i class="fa fa-check"></i> Определение уровня</li>
+                        </ul>
+                    </div>
+                    
+                    <form class="lead-form" id="lead-form" action="/submit-lead/" method="POST">
+                        <input type="hidden" name="csrf_token" value="{{ csrf_token() if csrf_token else '' }}">
+                        
+                        <div class="form-group">
+                            <label for="parent-name" class="form-label">Ваше имя *</label>
+                            <input type="text" id="parent-name" name="parent_name" class="form-input" 
+                                   placeholder="Иван Иванов" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="parent-phone" class="form-label">Телефон *</label>
+                            <input type="tel" id="parent-phone" name="parent_phone" class="form-input" 
+                                   placeholder="+7 (___) ___-__-__" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="child-age" class="form-label">Возраст ребёнка</label>
+                            <input type="number" id="child-age" name="child_age" class="form-input" 
+                                   placeholder="Лет" min="3" max="17">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="program-select" class="form-label">Интересующая программа</label>
+                            <select id="program-select" name="program" class="form-select">
+                                <option value="">Не выбрано</option>
+                                <option value="school">Подготовка к школе</option>
+                                <option value="english">Английский язык</option>
+                                <option value="mental">Ментальная арифметика</option>
+                                <option value="reading">Скорочтение</option>
+                                <option value="memory">Развитие памяти</option>
+                                <option value="cubing">Спидкубинг</option>
+                                <option value="math">Суперматематика</option>
+                                <option value="tutors">Репетиторы</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group form-checkbox">
+                            <input type="checkbox" id="consent" name="consent" required checked>
+                            <label for="consent">
+                                <span></span>
+                                Согласен на <a href="policy.html" target="_blank">обработку персональных данных</a>
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-full">
+                            Отправить заявку
+                        </button>
+                        
+                        <p class="form-note">
+                            <i class="fa fa-lock"></i> Ваши данные под защитой
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="/" class="footer-logo">
+                        <img src="{{ url_for('static', filename='img/logo.svg') }}" alt="Начало">
+                        <span>Образовательный центр «Начало»</span>
+                    </a>
+                    <p class="footer-desc">
+                        Интеллектуальное развитие детей от 5 до 16 лет<br>
+                        в Екатеринбурге
+                    </p>
+                    <div class="footer-socials">
+                        <a href="{{ site_social.vk }}" target="_blank" rel="noopener"><i class="fab fa-vk"></i></a>
+                        <a href="https://{{ site_social.telegram }}" target="_blank" rel="noopener"><i class="fab fa-telegram"></i></a>
+                        <a href="{{ site_social.whatsapp }}" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-title">Меню</h4>
+                    <ul class="footer-menu">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="programs.html">Программы</a></li>
+                        <li><a href="about.html">О центре</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-title">Программы</h4>
+                    <ul class="footer-menu">
+                        <li><a href="#english">Английский язык</a></li>
+                        <li><a href="#mental">Ментальная арифметика</a></li>
+                        <li><a href="#reading">Скорочтение</a></li>
+                        <li><a href="#tutors">Репетиторы</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-title">Контакты</h4>
+                    <ul class="footer-contacts">
+                        <li>
+                            <i class="fa fa-phone"></i>
+                            <a href="tel:{{ site_contact.phone_raw }}">{{ site_contact.phone }}</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope"></i>
+                            <a href="mailto:{{ site_contact.email }}">{{ site_contact.email }}</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-map-marker-alt"></i>
+                            <span>{{ site_address.short }}</span>
+                        </li>
+                        <li>
+                            <i class="fa fa-clock"></i>
+                            <span>Пн-Пт: 9:00-20:00<br>Сб: 10:00-17:00</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col footer-col-full">
+                    <h4 class="footer-title">Сведения об образовательной организации</h4>
+                    <ul class="footer-info-menu">
+                        <li><a href="info/basic.html">Основные сведения</a></li>
+                        <li><a href="info/documents.html">Документы</a></li>
+                        <li><a href="info/education.html">Образование</a></li>
+                        <li><a href="info/teachers.html">Педагогический состав</a></li>
+                        <li><a href="info/paid-services.html">Платные образовательные услуги</a></li>
+                        <li><a href="info/index.html">Все разделы</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <p>&copy; 2024 Образовательный центр «Начало». Все права защищены.</p>
+                    <p>
+                        <a href="policy.html">Политика конфиденциальности</a> |
+                        <a href="info/index.html">Сведения об организации</a>
+                    </p>
+                </div>
+                <!-- <div class="footer-license">
+                    <p>Лицензия на образовательную деятельность № {{ site_license.number }} от {{ site_license.date }}</p>
+                </div> -->
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div class="modal" id="success-modal">
+        <div class="modal-overlay" data-close-modal></div>
+        <div class="modal-content modal-success">
+            <div class="success-icon">
+                <i class="fa fa-check-circle"></i>
+            </div>
+            <h3 class="modal-title">Заявка отправлена!</h3>
+            <p class="modal-text">Мы свяжемся с вами в ближайшее время</p>
+            <button class="btn btn-primary" data-close-modal>Хорошо</button>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        window.YANDEX_METRIKA_ID = '{{ site_analytics.yandex_metrika_id }}';
+    </script>
+    <script src="js/forms.js"></script>
+    <script src="js/weaksighted.js"></script>
+</body>
+</html>

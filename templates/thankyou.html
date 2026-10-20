@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Спасибо за заявку! — Образовательный центр «Начало»</title>
+    <link rel="stylesheet" href="/static/css/main.css">
+    <style>
+        .thank-you-section {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 20px;
+        }
+        .thank-you-card {
+            max-width: 600px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            padding: 50px 40px;
+        }
+        .thank-you-card .icon {
+            width: 80px;
+            height: 80px;
+            background: #2ECC71;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+        }
+        .thank-you-card .icon svg {
+            width: 50px;
+            height: 50px;
+            color: white;
+        }
+        .thank-you-card h1 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 32px;
+        }
+        .thank-you-card p {
+            color: #666;
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        .thank-you-card .info {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        .thank-you-card .info p {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        .thank-you-card .info strong {
+            color: #333;
+        }
+        .btn-back {
+            display: inline-block;
+            padding: 15px 40px;
+            background: #4A90E2;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        .btn-back:hover {
+            background: #357ABD;
+        }
+    </style>
+</head>
+<body>
+    <section class="thank-you-section">
+        <div class="thank-you-card">
+            <div class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                </svg>
+            </div>
+            
+            <h1>Спасибо за вашу заявку!</h1>
+            <p>Мы получили вашу заявку и свяжемся с вами в ближайшее время</p>
+            
+            <div class="info">
+                <p><strong>⏰ Время обработки:</strong> до 24 часов</p>
+                <p><strong>📞 Мы позвоним вам</strong> для уточнения деталей</p>
+                <p><strong>📧 Письмо с подтверждением</strong> будет отправлено на вашу почту</p>
+            </div>
+
+            <a href="/" class="btn-back">Вернуться на главную</a>
+        </div>
+    </section>
+</body>
+</html>

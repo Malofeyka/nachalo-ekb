@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Образовательный центр «Начало» в Екатеринбурге — программы развития для детей от 5 до 16 лет: английский язык, ментальная арифметика, скорочтение и другие.">
+    <title>{% block title %}Образовательный центр «Начало» — Екатеринбург{% endblock %}</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/weaksighted.css') }}" id="weaksighted-styles"
+        disabled>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='img/logo.svg') }}">
+
+    <!-- Analytics Configuration -->
+    <script>
+        window.YANDEX_METRIKA_ID = '{{ site_analytics.yandex_metrika_id }}';
+    </script>
+</head>
+
+<body class="page-body">
+
+    <!-- Версия для слабовидящих -->
+    <div class="weaksighted-toggle">
+        <button type="button" id="weaksighted-btn" class="weaksighted-btn" aria-label="Версия для слабовидящих">
+            <i class="fa fa-eye"></i>
+            <span>👁</span>
+        </button>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-inner">
+                    <div class="header-contact">
+                        <a href="tel:{{ site_contact.phone_raw }}" class="header-phone">{{ site_contact.phone }}</a>
+                        <span class="header-city">г. {{ site_address.city }}</span>
+                    </div>
+                    <div class="header-socials">
+                        <a href="{{ site_social.vk }}" target="_blank" rel="noopener" aria-label="ВКонтакте"><i
+                                class="fab fa-vk"></i></a>
+                        <a href="https://{{ site_social.telegram }}" target="_blank" rel="noopener"
+                            aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                        <a href="{{ site_social.whatsapp }}" target="_blank" rel="noopener" aria-label="WhatsApp"><i
+                                class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-main">
+            <div class="container">
+                <div class="header-main-inner">
+                    <a href="/" class="header-logo">
+                        <img src="{{ url_for('static', filename='img/logo.svg') }}" alt="Начало — Образовательный центр"
+                            class="logo-image">
+                        <span class="logo-text">Образовательный центр «Начало»</span>
+                    </a>
+
+                    <nav class="header-nav">
+                        <ul class="main-menu">
+                            <li><a href="/" class="active">Главная</a></li>
+                            <li><a href="#programs">Программы</a></li>
+                            <li><a href="#about">О центре</a></li>
+                            <li><a href="#contacts">Контакты</a></li>
+                            <li class="menu-info-item">
+                                <a href="{{ url_for('info_index') }}" class="info-link">
+                                    <i class="fa fa-info-circle"></i>
+                                    Сведения об организации
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <button class="header-callback btn btn-outline" data-modal="callback">
+                        Заказать звонок
+                    </button>
+
+                    <button class="hamburger" aria-label="Меню">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        {% block content %}
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        Начало - лучший старт для новых открытий!
+                    </h1>
+                    <p class="hero-subtitle">
+                        Программы для детей от 5 до 16 лет в Екатеринбурге:<br>
+                        английский язык, ментальная арифметика, скорочтение и другие
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#programs" class="btn btn-primary">Выбрать программу</a>
+                        <a href="#form" class="btn btn-secondary">Записаться</a>
+                    </div>
+                    <div class="hero-features">
+                        <!-- <div class="hero-feature">
+                            <i class="fa fa-check-circle"></i>
+                            <span>Лицензия на образовательную деятельность</span>
+                        </div> -->
+                        <div class="hero-feature">
+                            <i class="fa fa-check-circle"></i>
+                            <span>Опытные педагоги</span>
+                        </div>
+                        <div class="hero-feature">
+                            <i class="fa fa-check-circle"></i>
+                            <span>Группы до 8 человек</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Programs Section -->
+        <section id="programs" class="programs-section">
+            <div class="container">
+                <h2 class="section-title">Наши программы</h2>
+                <p class="section-subtitle">
+                    Выберите направление для развития вашего ребёнка
+                </p>
+
+                <div class="programs-grid">
+                    <!-- Program Card 5 -->
+                    <article class="program-card">
+                        <div class="program-icon">
+                            <i class="fa fa-graduation-cap"></i>
+                        </div>
+                        <h3 class="program-title">Подготовка к школе</h3>
+                        <p class="program-desc">
+                            Комплексная подготовка: чтение, письмо, счёт, окружающий мир.
+                        </p>
+                        <ul class="program-features">
+                            <li><i class="fa fa-child"></i> 5-7 лет</li>
+                            <li><i class="fa fa-clock"></i> 2-3 раза в неделю</li>
+                            <li><i class="fa fa-users"></i> Группы до 6 чел.</li>
+                        </ul>
+                        <a href="{{ url_for('program_detail', program_slug='school') }}"
+                            class="btn btn-card">Подробнее</a>
+                    </article>
+
+                    <!-- Program Card 1 -->
+                    <article class="program-card">
+                        <div class="program-icon">
+                            <i class="fa fa-language"></i>
+                        </div>
+                        <h3 class="program-title">Английский язык</h3>
+                        <p class="program-desc">
+                            Современные методики изучения английского. Разговорная практика с первого занятия.
+                        </p>
+                        <ul class="program-features">
+                            <li><i class="fa fa-child"></i> 5-16 лет</li>
+                            <li><i class="fa fa-clock"></i> 2 раза в неделю</li>
+                            <li><i class="fa fa-users"></i> Группы до 8 чел.</li>
+                        </ul>
+                        <a href="{{ url_for('program_detail', program_slug='english') }}"
+                            class="btn btn-card">Подробнее</a>
+                    </article>
+
+                    <!-- Program Card 2 -->
+                    <article class="program-card">
+                        <div class="program-icon">
+                            <i class="fa fa-calculator"></i>
+                        </div>
+                        <h3 class="program-title">Ментальная арифметика</h3>
+                        <p class="program-desc">
+                            Развитие обоих полушарий мозга. Счёт в уме быстрее калькулятора.
+                        </p>
+                        <ul class="program-features">
+                            <li><i class="fa fa-child"></i> 5-14 лет</li>
+                            <li><i class="fa fa-clock"></i> 2 раза в неделю</li>
+                            <li><i class="fa fa-users"></i> Группы до 8 чел.</li>
+                        </ul>
+                        <a href="{{ url_for('program_detail', program_slug='mental') }}"
+                            class="btn btn-card">Подробнее</a>
+                    </article>
+
+                    <!-- Program Card 3 -->
+                    <article class="program-card">
+                        <div class="program-icon">
+                            <i class="fa fa-book-open"></i>
+                        </div>
+                        <h3 class="program-title">Скорочтение</h3>
+                        <p class="program-desc">
+                            Увеличим скорость чтения в 2-3 раза. Улучшим понимание текста.
+                        </p>
+                        <ul class="program-features">
+                            <li><i class="fa fa-child"></i> 6-14 лет</li>
+                            <li><i class="fa fa-clock"></i> 2 раза в неделю</li>
+                            <li><i class="fa fa-users"></i> Группы до 8 чел.</li>
+                        </ul>
+                        <a href="{{ url_for('program_detail', program_slug='reading') }}"
+                            class="btn btn-card">Подробнее</a>
+                    </article>
+
+                    <!-- Program Card 4 -->
+                    <article class="program-card">
+                        <div class="program-icon">
+                            <i class="fa fa-brain"></i>
+                        </div>
+                        <h3 class="program-title">Развитие памяти</h3>
+                        <p class="program-desc">
+                            Мнемотехники для запоминания информации. Развитие внимания.
+                        </p>
+                        <ul class="program-features">
+                            <li><i class="fa fa-child"></i> 6-14 лет</li>
+                            <li><i class="fa fa-clock"></i> 2 раза в неделю</li>
+                            <li><i class="fa fa-users"></i> Группы до 8 чел.</li>
+                        </ul>
+                        <a href="{{ url_for('program_detail', program_slug='memory') }}"
+                            class="btn btn-card">Подробнее</a>
+                    </article>
+
+
+                    <!-- Program Card 6 -->
+                    <article class="program-card">
+                        <div class="program-icon">
+                            <i class="fa fa-cube"></i>
+                        </div>
+                        <h3 class="program-title">Спидкубинг</h3>
+                        <p class="program-desc">
+                            Скоростная сборка кубика Рубика. Развитие моторики и логики.
+                        </p>
+                        <ul class="program-features">
+                            <li><i class="fa fa-child"></i> 7-16 лет</li>
+                            <li><i class="fa fa-clock"></i> 2 раза в неделю</li>
+                            <li><i class="fa fa-users"></i> Группы до 8 чел.</li>
+                        </ul>
+                        <a href="{{ url_for('program_detail', program_slug='cubing') }}"
+                            class="btn btn-card">Подробнее</a>
+                    </article>
+
+                    <!-- Program Card 7 -->
+                    <article class="program-card">
+                        <div class="program-icon">
+                            <i class="fa fa-square-root-alt"></i>
+                        </div>
+                        <h3 class="program-title">Суперматематика</h3>
+                        <p class="program-desc">
+                            Помогаем со школьной математикой. Подготовка к ВПР.
+                        </p>
+                        <ul class="program-features">
+                            <li><i class="fa fa-child"></i> 7-12 лет</li>
+                            <li><i class="fa fa-clock"></i> 2 раза в неделю</li>
+                            <li><i class="fa fa-users"></i> Мини-группы</li>
+                        </ul>
+                        <a href="{{ url_for('program_detail', program_slug='math') }}"
+                            class="btn btn-card">Подробнее</a>
+                    </article>
+
+                    <!-- Program Card 8 -->
+                    <article class="program-card">
+                        <div class="program-icon">
+                            <i class="fa fa-font"></i>
+                        </div>
+                        <h3 class="program-title">Обучение чтению</h3>
+                        <p class="program-desc">
+                            Знакомство со всеми буквами и звуками русского языка.
+                        </p>
+                        <ul class="program-features">
+                            <li><i class="fa fa-child"></i> 5-10 лет</li>
+                            <li><i class="fa fa-clock"></i> 2 раза в неделю</li>
+                            <li><i class="fa fa-users"></i> Индивидуально / группы</li>
+                        </ul>
+                        <a href="{{ url_for('program_detail', program_slug='learn_reading') }}"
+                            class="btn btn-card">Подробнее</a>
+                    </article>
+
+                    <!-- Program Card 9 -->
+                    <article class="program-card">
+                        <div class="program-icon">
+                            <i class="fa fa-chess"></i>
+                        </div>
+                        <h3 class="program-title">Шахматы</h3>
+                        <p class="program-desc">
+                            Развитие логики, стратегии, памяти и внимания через игру.
+                        </p>
+                        <ul class="program-features">
+                            <li><i class="fa fa-child"></i> 5-10 лет</li>
+                            <li><i class="fa fa-clock"></i> 2 раза в неделю</li>
+                            <li><i class="fa fa-users"></i> Мини-группы</li>
+                        </ul>
+                        <a href="{{ url_for('program_detail', program_slug='chess') }}"
+                            class="btn btn-card">Подробнее</a>
+                    </article>
+
+                    <!-- Program Card 10 -->
+                    <article class="program-card">
+                        <div class="program-icon">
+                            <i class="fa fa-school"></i>
+                        </div>
+                        <h3 class="program-title">Продленка</h3>
+                        <p class="program-desc">
+                            Уроки, игры и прогулки под присмотром с 8:00 до 17:00.
+                        </p>
+                        <ul class="program-features">
+                            <li><i class="fa fa-child"></i> 1-4 класс</li>
+                            <li><i class="fa fa-clock"></i> Пн-Пт</li>
+                            <li><i class="fa fa-users"></i> В группе</li>
+                        </ul>
+                        <a href="{{ url_for('program_detail', program_slug='afterschool') }}"
+                            class="btn btn-card">Подробнее</a>
+                    </article>
+
+                    <!-- Program Card 11 -->
+                    <article class="program-card">
+                        <div class="program-icon">
+                            <i class="fa fa-paint-brush"></i>
+                        </div>
+                        <h3 class="program-title">Осенний творческий клуб</h3>
+                        <p class="program-desc">
+                            5 дней веселья и авторских мастер-классов!
+                        </p>
+                        <ul class="program-features">
+                            <li><i class="fa fa-child"></i> 7–11 лет</li>
+                            <li><i class="fa fa-calendar-alt"></i> с 26 по 30 октября</li>
+                            <li><i class="fa fa-clock"></i> 10:00 &ndash; 17:00</li>
+                        </ul>
+                        <a href="{{ url_for('program_detail', program_slug='summer_camp') }}"
+                            class="btn btn-card">Подробнее</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Advantages Section -->
+        <section id="about" class="advantages-section">
+            <div class="container">
+                <h2 class="section-title">Почему выбирают «Начало»</h2>
+
+                <div class="advantages-grid">
+                    <!-- <div class="advantage-item">
+                        <div class="advantage-icon">
+                            <i class="fa fa-certificate"></i>
+                        </div>
+                        <h4>Лицензия</h4>
+                        <p>Официальная образовательная лицензия. Работаем по ФГОС.</p>
+                    </div> -->
+
+                    <div class="advantage-item">
+                        <div class="advantage-icon">
+                            <i class="fa fa-user-graduate"></i>
+                        </div>
+                        <h4>Опытные педагоги</h4>
+                        <p>Преподаватели со стажем. Регулярное повышение квалификации.</p>
+                    </div>
+
+                    <div class="advantage-item">
+                        <div class="advantage-icon">
+                            <i class="fa fa-users"></i>
+                        </div>
+                        <h4>Малые группы</h4>
+                        <p>До 8 человек в группе. Индивидуальный подход к каждому.</p>
+                    </div>
+
+                    <div class="advantage-item">
+                        <div class="advantage-icon">
+                            <i class="fa fa-laptop"></i>
+                        </div>
+                        <h4>Онлайн и офлайн</h4>
+                        <p>Выбирайте удобный формат обучения для вашего ребёнка.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lead Form Section -->
+        <section id="form" class="lead-section">
+            <div class="container">
+                <div class="lead-wrapper">
+                    <div class="lead-content">
+                        <h2 class="lead-title">Запишитесь на пробное занятие</h2>
+                        <p class="lead-text">
+                            Оставьте заявку, и мы свяжемся с вами<br>
+                            для подбора удобного времени и программы
+                        </p>
+                        <ul class="lead-benefits">
+                            <li><i class="fa fa-check"></i> Бесплатно</li>
+                            <li><i class="fa fa-check"></i> 30 минут</li>
+                            <li><i class="fa fa-check"></i> Знакомство с педагогом</li>
+                            <li><i class="fa fa-check"></i> Определение уровня</li>
+                        </ul>
+                    </div>
+
+                    <form class="lead-form" id="lead-form" action="/submit-lead/" method="POST">
+                        <input type="hidden" name="csrf_token" value="{{ csrf_token() if csrf_token else '' }}">
+
+                        <div class="form-group">
+                            <label for="parent-name" class="form-label">Ваше имя *</label>
+                            <input type="text" id="parent-name" name="parent_name" class="form-input"
+                                placeholder="Иван Иванов" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="parent-phone" class="form-label">Телефон *</label>
+                            <input type="tel" id="parent-phone" name="parent_phone" class="form-input"
+                                placeholder="+7 (___) ___-__-__" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="child-age" class="form-label">Возраст ребёнка</label>
+                            <input type="number" id="child-age" name="child_age" class="form-input" placeholder="Лет"
+                                min="3" max="17">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="program-select" class="form-label">Интересующая программа</label>
+                            <select id="program-select" name="program" class="form-select">
+                                <option value="">Не выбрано</option>
+                                <option value="school">Подготовка к школе</option>
+                                <option value="english">Английский язык</option>
+                                <option value="mental">Ментальная арифметика</option>
+                                <option value="reading">Скорочтение</option>
+                                <option value="memory">Развитие памяти</option>
+                                <option value="cubing">Спидкубинг</option>
+                                <option value="math">Суперматематика</option>
+                                <option value="learn_reading">Обучение чтению</option>
+                                <option value="chess">Шахматы</option>
+                                <option value="afterschool">Продленка</option>
+                                <option value="summer_camp">Осенние каникулы</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group form-checkbox">
+                            <input type="checkbox" id="consent" name="consent" required checked>
+                            <label for="consent">
+                                <span></span>
+                                Согласен на <a href="policy.html" target="_blank">обработку персональных данных</a>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full">
+                            Отправить заявку
+                        </button>
+
+                        <p class="form-note">
+                            <i class="fa fa-lock"></i> Ваши данные под защитой
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Section -->
+        <section id="contacts" class="map-section">
+            <div class="container">
+                <h2 class="section-title">Как нас найти</h2>
+            </div>
+            <div id="map" class="map-container" data-address="{{ site_address.short }}"></div>
+        </section>
+        {% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="/" class="footer-logo">
+                        <img src="{{ url_for('static', filename='img/logo.svg') }}" alt="Начало">
+                        <span>Образовательный центр «Начало»</span>
+                    </a>
+                    <p class="footer-desc">
+                        Интеллектуальное развитие детей от 5 до 16 лет<br>
+                        в Екатеринбурге
+                    </p>
+                    <div class="footer-socials">
+                        <a href="{{ site_social.vk }}" target="_blank" rel="noopener"><i class="fab fa-vk"></i></a>
+                        <a href="https://{{ site_social.telegram }}" target="_blank" rel="noopener"><i
+                                class="fab fa-telegram"></i></a>
+                        <a href="{{ site_social.whatsapp }}" target="_blank" rel="noopener"><i
+                                class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-title">Меню</h4>
+                    <ul class="footer-menu">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="programs.html">Программы</a></li>
+                        <li><a href="about.html">О центре</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-title">Программы</h4>
+                    <ul class="footer-menu">
+                        <li><a href="programs.html#english">Английский язык</a></li>
+                        <li><a href="programs.html#mental">Ментальная арифметика</a></li>
+                        <li><a href="programs.html#reading">Скорочтение</a></li>
+                        <li><a href="programs.html#math">Суперматематика</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-title">Контакты</h4>
+                    <ul class="footer-contacts">
+                        <li>
+                            <i class="fa fa-phone"></i>
+                            <a href="tel:{{ site_contact.phone }}">{{ site_contact.phone }}</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope"></i>
+                            <a href="mailto:{{ site_org.email|default(site_contact.email) }}">{{ site_contact.email
+                                }}</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-map-marker-alt"></i>
+                            <span>{{ site_address.short }}</span>
+                        </li>
+                        <li>
+                            <i class="fa fa-clock"></i>
+                            <span>Пн-Пт: 9:00-20:00<br>Сб: 10:00-17:00</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-col footer-col-full">
+                    <h4 class="footer-title">Сведения об образовательной организации</h4>
+                    <ul class="footer-info-menu">
+                        <li><a href="info/basic.html">Основные сведения</a></li>
+                        <li><a href="info/documents.html">Документы</a></li>
+                        <li><a href="info/education.html">Образование</a></li>
+                        <li><a href="info/teachers.html">Педагогический состав</a></li>
+                        <li><a href="info/paid-services.html">Платные образовательные услуги</a></li>
+                        <li><a href="info/index.html">Все разделы</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <p>&copy; 2024 Образовательный центр «Начало». Все права защищены.</p>
+                    <p>
+                        <a href="policy.html">Политика конфиденциальности</a> |
+                        <a href="info/index.html">Сведения об организации</a>
+                    </p>
+                </div>
+                <!-- <div class="footer-license">
+                    <p>Лицензия на образовательную деятельность № {{ site_license.number }} от {{ site_license.date }}
+                    </p>
+                </div> -->
+            </div>
+        </div>
+    </footer>
+
+    <!-- Callback Modal -->
+    <div class="modal" id="callback-modal">
+        <div class="modal-overlay" data-close-modal></div>
+        <div class="modal-content">
+            <button class="modal-close" data-close-modal>&times;</button>
+            <h3 class="modal-title">Заказать звонок</h3>
+            <p class="modal-text">Оставьте номер, мы перезвоним в течение 5 минут</p>
+
+            <form class="modal-form" action="/submit-callback/" method="POST">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() if csrf_token else '' }}">
+
+                <div class="form-group">
+                    <label for="callback-name" class="form-label">Ваше имя</label>
+                    <input type="text" id="callback-name" name="name" class="form-input" placeholder="Имя">
+                </div>
+
+                <div class="form-group">
+                    <label for="callback-phone" class="form-label">Телефон *</label>
+                    <input type="tel" id="callback-phone" name="phone" class="form-input"
+                        placeholder="+7 (___) ___-__-__" required>
+                </div>
+
+                <div class="form-group form-checkbox">
+                    <input type="checkbox" id="callback-consent" name="consent" required checked>
+                    <label for="callback-consent">
+                        <span></span>
+                        Согласен на обработку персональных данных
+                    </label>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-full">Жду звонка</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal" id="success-modal">
+        <div class="modal-overlay" data-close-modal></div>
+        <div class="modal-content modal-success">
+            <div class="success-icon">
+                <i class="fa fa-check-circle"></i>
+            </div>
+            <h3 class="modal-title">Заявка отправлена!</h3>
+            <p class="modal-text">Мы свяжемся с вами в ближайшее время</p>
+            <button class="btn btn-primary" data-close-modal>Хорошо</button>
+        </div>
+    </div>
+
+    <!-- Autumn Camp Modal -->
+    <div class="modal summer-camp-modal autumn-camp-modal" id="summer-camp-modal">
+        <div class="modal-overlay" data-close-modal></div>
+        <div class="modal-content">
+            <div class="falling-leaves-container" id="falling-leaves" aria-hidden="true"></div>
+            <button class="modal-close" data-close-modal>&times;</button>
+            <div class="summer-camp-content autumn-camp-content">
+                <div class="summer-camp-icon autumn-camp-icon">
+                    <i class="fa fa-leaf"></i>
+                </div>
+                <div class="autumn-dates-badge">
+                    <i class="fa fa-calendar-alt"></i> 26.10 &ndash; 30.10
+                </div>
+                <h3 class="modal-title">Осенние каникулы!</h3>
+                <p class="modal-text">Открыт набор на увлекательную программу «Осенние каникулы» (26.10&ndash;30.10) в нашем образовательном центре.
+                    Подарите ребёнку незабываемый и полезный отдых!</p>
+                <a href="#form" class="btn btn-primary btn-full autumn-btn" data-close-modal
+                    onclick="document.getElementById('program-select').value='summer_camp';">Записаться на каникулы</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://api-maps.yandex.ru/2.1/?apikey={{ site_address.map_api_key }}&lang=ru_RU"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/forms.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/weaksighted.js') }}"></script>
+</body>
+
+</html>

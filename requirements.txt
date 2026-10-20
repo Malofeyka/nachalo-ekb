@@ -1,0 +1,23 @@
+# Requirements for Nachalo Education Center Website
+# Install: pip install -r requirements.txt
+
+# Core
+Flask>=3.0.0
+Flask-WTF>=1.2.1
+email-validator>=2.1.0
+python-dotenv>=1.0.0
+
+# Database
+Flask-SQLAlchemy>=3.1.0
+PyMySQL>=1.1.0
+
+# Production server
+gunicorn>=21.2.0
+
+# Security
+Werkzeug>=3.0.1
+
+cryptography>=41.0.0
+
+# HTTP & Integrations
+requests>=2.31.0

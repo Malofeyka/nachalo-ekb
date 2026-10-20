@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ program.title }} в Образовательном центре «Начало» — Екатеринбург">
+    <title>{{ program.title }} — Образовательный центр «Начало»</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/weaksighted.css') }}" id="weaksighted-styles" disabled>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='img/logo.svg') }}">
+</head>
+<body class="page-body">
+
+    <!-- Версия для слабовидящих -->
+    <div class="weaksighted-toggle">
+        <button type="button" id="weaksighted-btn" class="weaksighted-btn" aria-label="Версия для слабовидящих">
+            <i class="fa fa-eye"></i>
+            <span>👁</span>
+        </button>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-inner">
+                    <div class="header-contact">
+                        <a href="tel:{{ site_contact.phone_raw }}" class="header-phone">{{ site_contact.phone }}</a>
+                        <span class="header-city">г. {{ site_address.city }}</span>
+                    </div>
+                    <div class="header-socials">
+                        <a href="{{ site_social.vk }}" target="_blank" rel="noopener" aria-label="ВКонтакте"><i class="fab fa-vk"></i></a>
+                        <a href="https://{{ site_social.telegram }}" target="_blank" rel="noopener" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                        <a href="{{ site_social.whatsapp }}" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-main">
+            <div class="container">
+                <div class="header-main-inner">
+                    <a href="/" class="header-logo">
+                        <img src="{{ url_for('static', filename='img/logo.svg') }}" alt="Начало — Образовательный центр" class="logo-image">
+                        <span class="logo-text">Образовательный центр «Начало»</span>
+                    </a>
+
+                    <nav class="header-nav">
+                        <ul class="main-menu">
+                            <li><a href="{{ url_for('index') }}">Главная</a></li>
+                            <li><a href="{{ url_for('programs') }}">Программы</a></li>
+                            <li><a href="{{ url_for('about') }}">О центре</a></li>
+                            <li><a href="{{ url_for('contacts') }}">Контакты</a></li>
+                            <li class="menu-info-item">
+                                <a href="{{ url_for('info_index') }}" class="info-link">
+                                    <i class="fa fa-info-circle"></i>
+                                    Сведения об организации
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <button class="header-callback btn btn-outline" data-modal="callback">
+                        Заказать звонок
+                    </button>
+
+                    <button class="hamburger" aria-label="Меню">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <!-- Breadcrumbs -->
+        <section class="breadcrumbs-section">
+            <div class="container">
+                <nav class="breadcrumbs">
+                    <a href="{{ url_for('index') }}">Главная</a>
+                    <span class="breadcrumb-separator"><i class="fa fa-chevron-right"></i></span>
+                    <a href="{{ url_for('programs') }}">Программы</a>
+                    <span class="breadcrumb-separator"><i class="fa fa-chevron-right"></i></span>
+                    <span class="breadcrumb-current">{{ program.title }}</span>
+                </nav>
+            </div>
+        </section>
+
+        <!-- Program Detail Section -->
+        <section class="program-detail-section">
+            <div class="container">
+                <article class="program-detail-card">
+                    <div class="program-detail-header">
+                        <div class="program-detail-icon">
+                            <i class="fa {{ program.icon }}"></i>
+                        </div>
+                        <div class="program-detail-info">
+                            <h1>{{ program.title }}</h1>
+                            <p class="program-age"><i class="fa fa-child"></i> {{ program.age }}</p>
+                        </div>
+                    </div>
+
+                    <div class="program-detail-content">
+                        <div class="program-detail-text">
+                            {% if program.badge %}
+                            <div class="program-badge-tag">
+                                <i class="fa fa-calendar-alt"></i> {{ program.badge }}
+                            </div>
+                            {% endif %}
+
+                            <h3>О программе</h3>
+                            <p class="program-intro-lead">
+                                {{ program.description }}
+                            </p>
+                            {% if program.about %}
+                            <p>{{ program.about }}</p>
+                            {% endif %}
+
+                            {% if program.schedule %}
+                            <div class="program-schedule-wrapper">
+                                <h3 class="section-sub-heading"><i class="fa fa-paint-brush"></i> Программа по дням:</h3>
+                                <div class="schedule-grid">
+                                    {% for item in program.schedule %}
+                                    <div class="schedule-day-card">
+                                        <div class="schedule-day-header">
+                                            <span class="day-badge">{{ item.day }}</span>
+                                            <i class="fa {{ item.icon }} day-icon"></i>
+                                        </div>
+                                        <h4 class="day-title">{{ item.title }}</h4>
+                                        <p class="day-desc">{{ item.desc }}</p>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                                {% if program.daily_extra %}
+                                <div class="schedule-extra-note">
+                                    <i class="fa fa-tree"></i> {{ program.daily_extra }}
+                                </div>
+                                {% endif %}
+                            </div>
+                            {% endif %}
+
+                            {% if program.study %}
+                            <h3>Что изучаем:</h3>
+                            <ul class="program-list">
+                                {% for item in program.study %}
+                                <li><i class="fa fa-check"></i> {{ item }}</li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+
+                            {% if program.benefits %}
+                            <div class="program-benefits-block">
+                                <h3><i class="fa fa-heart"></i> Почему родителям это удобно, а детям интересно:</h3>
+                                <ul class="benefits-list">
+                                    {% for benefit in program.benefits %}
+                                    <li><i class="fa fa-check-circle"></i> {{ benefit }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                            {% endif %}
+
+                            {% if program.results %}
+                            <h3>Результат:</h3>
+                            <ul class="program-list">
+                                {% for item in program.results %}
+                                <li><i class="fa fa-star"></i> {{ item }}</li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                        </div>
+
+                        <div class="program-detail-sidebar">
+                            <div class="program-info-box">
+                                <h4>Информация и формат</h4>
+                                <ul>
+                                    {% for item in program.format %}
+                                    <li><i class="fa {{ item.icon }}"></i> {{ item.text }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+
+                            <div class="program-price-box">
+                                <h4>Стоимость</h4>
+                                <p class="price-main">{{ program.price }}</p>
+                                <p class="price-note">{{ program.price_note }}</p>
+                                <ul class="price-options">
+                                    {% for option in program.price_options %}
+                                    <li>{{ option | safe }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+
+                            {% if program.warning %}
+                            <div class="program-warning-banner">
+                                <i class="fa fa-exclamation-triangle"></i>
+                                <span>{{ program.warning }}</span>
+                            </div>
+                            {% endif %}
+
+                            {% if program.phone %}
+                            <a href="tel:{{ program.phone_raw }}" class="btn btn-secondary btn-full phone-cta-btn">
+                                <i class="fa fa-phone"></i> Позвонить: {{ program.phone }}
+                            </a>
+                            {% endif %}
+
+                            <a href="#form" class="btn btn-primary btn-full">Записаться онлайн</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Back to Programs Button -->
+                <div class="back-to-programs">
+                    <a href="{{ url_for('programs') }}" class="btn btn-outline">
+                        <i class="fa fa-arrow-left"></i> Назад к программам
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lead Form Section -->
+        <section id="form" class="lead-section">
+            <div class="container">
+                <div class="lead-wrapper">
+                    <div class="lead-content">
+                        <h2 class="lead-title">Запишитесь на бесплатное пробное занятие</h2>
+                        <p class="lead-text">
+                            Оставьте заявку, и мы свяжемся с вами в течение 15 минут<br>
+                            для подбора удобного времени
+                        </p>
+                        <ul class="lead-benefits">
+                            <li><i class="fa fa-check"></i> Бесплатно</li>
+                            <li><i class="fa fa-check"></i> 30 минут</li>
+                            <li><i class="fa fa-check"></i> Знакомство с педагогом</li>
+                            <li><i class="fa fa-check"></i> Определение уровня</li>
+                        </ul>
+                    </div>
+
+                    <form class="lead-form" id="lead-form" action="/submit-lead/" method="POST">
+                        <input type="hidden" name="csrf_token" value="{{ csrf_token() if csrf_token else '' }}">
+
+                        <div class="form-group">
+                            <label for="parent-name" class="form-label">Ваше имя *</label>
+                            <input type="text" id="parent-name" name="parent_name" class="form-input"
+                                   placeholder="Иван Иванов" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="parent-phone" class="form-label">Телефон *</label>
+                            <input type="tel" id="parent-phone" name="parent_phone" class="form-input"
+                                   placeholder="+7 (___) ___-__-__" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="child-age" class="form-label">Возраст ребёнка</label>
+                            <input type="number" id="child-age" name="child_age" class="form-input"
+                                   placeholder="Лет" min="3" max="17">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="program-select" class="form-label">Интересующая программа</label>
+                            <select id="program-select" name="program" class="form-select">
+                                <option value="">Не выбрано</option>
+                                <option value="english" {% if program_slug == 'english' %}selected{% endif %}>Английский язык</option>
+                                <option value="mental" {% if program_slug == 'mental' %}selected{% endif %}>Ментальная арифметика</option>
+                                <option value="reading" {% if program_slug == 'reading' %}selected{% endif %}>Скорочтение</option>
+                                <option value="memory" {% if program_slug == 'memory' %}selected{% endif %}>Развитие памяти</option>
+                                <option value="school" {% if program_slug == 'school' %}selected{% endif %}>Подготовка к школе</option>
+                                <option value="cubing" {% if program_slug == 'cubing' %}selected{% endif %}>Спидкубинг</option>
+                                <option value="math" {% if program_slug == 'math' %}selected{% endif %}>Суперматематика</option>
+                                <option value="tutors" {% if program_slug == 'tutors' %}selected{% endif %}>Репетиторы</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group form-checkbox">
+                            <input type="checkbox" id="consent" name="consent" required checked>
+                            <label for="consent">
+                                <span></span>
+                                Согласен на <a href="{{ url_for('policy') }}" target="_blank">обработку персональных данных</a>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full">
+                            Отправить заявку
+                        </button>
+
+                        <p class="form-note">
+                            <i class="fa fa-lock"></i> Ваши данные под защитой
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="/" class="footer-logo">
+                        <img src="{{ url_for('static', filename='img/logo.svg') }}" alt="Начало">
+                        <span>Образовательный центр «Начало»</span>
+                    </a>
+                    <p class="footer-desc">
+                        Интеллектуальное развитие детей от 5 до 16 лет<br>
+                        в Екатеринбурге
+                    </p>
+                    <div class="footer-socials">
+                        <a href="{{ site_social.vk }}" target="_blank" rel="noopener"><i class="fab fa-vk"></i></a>
+                        <a href="https://{{ site_social.telegram }}" target="_blank" rel="noopener"><i class="fab fa-telegram"></i></a>
+                        <a href="{{ site_social.whatsapp }}" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-title">Меню</h4>
+                    <ul class="footer-menu">
+                        <li><a href="{{ url_for('index') }}">Главная</a></li>
+                        <li><a href="{{ url_for('programs') }}">Программы</a></li>
+                        <li><a href="{{ url_for('about') }}">О центре</a></li>
+                        <li><a href="{{ url_for('contacts') }}">Контакты</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-title">Контакты</h4>
+                    <ul class="footer-contacts">
+                        <li>
+                            <i class="fa fa-phone"></i>
+                            <a href="tel:{{ site_contact.phone_raw }}">{{ site_contact.phone }}</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope"></i>
+                            <a href="mailto:{{ site_contact.email }}">{{ site_contact.email }}</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-map-marker-alt"></i>
+                            <span>{{ site_address.short }}</span>
+                        </li>
+                        <li>
+                            <i class="fa fa-clock"></i>
+                            <span>Пн-Пт: 9:00-20:00<br>Сб: 10:00-17:00</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-col footer-col-full">
+                    <h4 class="footer-title">Сведения об образовательной организации</h4>
+                    <ul class="footer-info-menu">
+                        <li><a href="{{ url_for('info_basic') }}">Основные сведения</a></li>
+                        <li><a href="{{ url_for('info_documents') }}">Документы</a></li>
+                        <li><a href="{{ url_for('info_education') }}">Образование</a></li>
+                        <li><a href="{{ url_for('info_teachers') }}">Педагогический состав</a></li>
+                        <li><a href="{{ url_for('info_paid_services') }}">Платные образовательные услуги</a></li>
+                        <li><a href="{{ url_for('info_index') }}">Все разделы</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <p>&copy; 2024 Образовательный центр «Начало». Все права защищены.</p>
+                    <p>
+                        <a href="{{ url_for('policy') }}">Политика конфиденциальности</a> |
+                        <a href="{{ url_for('info_index') }}">Сведения об организации</a>
+                    </p>
+                </div>
+                <!-- <div class="footer-license">
+                    <p>Лицензия на образовательную деятельность № {{ site_license.number }} от {{ site_license.date }}</p>
+                </div> -->
+            </div>
+        </div>
+    </footer>
+
+    <!-- Callback Modal -->
+    <div class="modal" id="callback-modal">
+        <div class="modal-overlay" data-close-modal></div>
+        <div class="modal-content">
+            <button class="modal-close" data-close-modal>&times;</button>
+            <h3 class="modal-title">Заказать звонок</h3>
+            <p class="modal-text">Оставьте номер, мы перезвоним в течение 5 минут</p>
+
+            <form class="modal-form" action="/submit-callback/" method="POST">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() if csrf_token else '' }}">
+
+                <div class="form-group">
+                    <label for="callback-name" class="form-label">Ваше имя</label>
+                    <input type="text" id="callback-name" name="name" class="form-input" placeholder="Имя">
+                </div>
+
+                <div class="form-group">
+                    <label for="callback-phone" class="form-label">Телефон *</label>
+                    <input type="tel" id="callback-phone" name="phone" class="form-input"
+                           placeholder="+7 (___) ___-__-__" required>
+                </div>
+
+                <div class="form-group form-checkbox">
+                    <input type="checkbox" id="callback-consent" name="consent" required checked>
+                    <label for="callback-consent">
+                        <span></span>
+                        Согласен на обработку персональных данных
+                    </label>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-full">Жду звонка</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal" id="success-modal">
+        <div class="modal-overlay" data-close-modal></div>
+        <div class="modal-content modal-success">
+            <div class="success-icon">
+                <i class="fa fa-check-circle"></i>
+            </div>
+            <h3 class="modal-title">Заявка отправлена!</h3>
+            <p class="modal-text">Мы свяжемся с вами в ближайшее время</p>
+            <button class="btn btn-primary" data-close-modal>Хорошо</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script>
+        window.YANDEX_METRIKA_ID = '{{ site_analytics.yandex_metrika_id }}';
+    </script>
+    <script src="{{ url_for('static', filename='js/forms.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/weaksighted.js') }}"></script>
+</body>
+</html>

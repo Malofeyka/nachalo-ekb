@@ -1,0 +1,49 @@
+{% extends "info/base.html" %}
+
+{% block title %}Руководство{% endblock %}
+
+{% block content %}
+<div class="info-section">
+    <h1>Руководство образовательной организации</h1>
+
+    <div class="info-block">
+        <h2><i class="fa fa-user-tie"></i> Руководитель образовательной организации</h2>
+        
+        {% if site_management|length > 0 %}
+        <div class="management-card">
+            <div class="management-photo">
+                <img src="{{ url_for('static', filename='img/photos/director-placeholder.jpg') }}" alt="Директор" class="management-img">
+            </div>
+            <div class="management-info">
+                <h3>{{ site_management[0].name }}</h3>
+                <p class="management-position"><strong>Должность:</strong> {{ site_management[0].position }}</p>
+                <p class="management-details">
+                    <strong>Телефон:</strong> <a href="tel:{{ site_management[0].phone }}">{{ site_management[0].phone }}</a><br>
+                    <strong>Email:</strong> <a href="mailto:{{ site_management[0].email }}">{{ site_management[0].email }}</a><br>
+                    <strong>График приема:</strong> Понедельник, Четверг 10:00-12:00 (по предварительной записи)
+                </p>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+
+    <div class="info-block">
+        <h2><i class="fa fa-users"></i> Заместители руководителя</h2>
+        <p class="info-note"><small>* Информация будет добавлена позже</small></p>
+    </div>
+
+    <div class="info-block">
+        <h2><i class="fa fa-building"></i> Руководители филиалов</h2>
+        <p class="info-note">
+            <small>* На текущий момент филиалы отсутствуют</small>
+        </p>
+    </div>
+
+    <div class="info-update-date">
+        <p>
+            <i class="fa fa-clock"></i>
+            Информация актуальна на: <strong>{{ site_org.data_actual_date }}</strong>
+        </p>
+    </div>
+</div>
+{% endblock %}
