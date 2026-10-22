@@ -327,6 +327,12 @@ def index():
     return render_template('index.html')
 
 
+@app.route('/index.html')
+def index_html():
+    """Редирект с /index.html на главную для SEO"""
+    return redirect(url_for('index'), code=301)
+
+
 @app.route('/programs.html')
 def programs():
     """Страница программ"""

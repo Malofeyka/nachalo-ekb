@@ -53,7 +53,7 @@
                     <div class="header-socials">
                         <a href="{{ site_social.vk }}" target="_blank" rel="noopener" aria-label="ВКонтакте"><i
                                 class="fab fa-vk"></i></a>
-                        <a href="https://{{ site_social.telegram }}" target="_blank" rel="noopener"
+                        <a href="{{ site_social.telegram }}" target="_blank" rel="noopener"
                             aria-label="Telegram"><i class="fab fa-telegram"></i></a>
                         <a href="{{ site_social.whatsapp }}" target="_blank" rel="noopener" aria-label="WhatsApp"><i
                                 class="fab fa-whatsapp"></i></a>
@@ -74,9 +74,9 @@
                     <nav class="header-nav">
                         <ul class="main-menu">
                             <li><a href="/" class="active">Главная</a></li>
-                            <li><a href="#programs">Программы</a></li>
-                            <li><a href="#about">О центре</a></li>
-                            <li><a href="#contacts">Контакты</a></li>
+                            <li><a href="/#programs">Программы</a></li>
+                            <li><a href="/#about">О центре</a></li>
+                            <li><a href="/#contacts">Контакты</a></li>
                             <li class="menu-info-item">
                                 <a href="{{ url_for('info_index') }}" class="info-link">
                                     <i class="fa fa-info-circle"></i>
@@ -489,7 +489,7 @@
                     </p>
                     <div class="footer-socials">
                         <a href="{{ site_social.vk }}" target="_blank" rel="noopener"><i class="fab fa-vk"></i></a>
-                        <a href="https://{{ site_social.telegram }}" target="_blank" rel="noopener"><i
+                        <a href="{{ site_social.telegram }}" target="_blank" rel="noopener"><i
                                 class="fab fa-telegram"></i></a>
                         <a href="{{ site_social.whatsapp }}" target="_blank" rel="noopener"><i
                                 class="fab fa-whatsapp"></i></a>
@@ -499,20 +499,20 @@
                 <div class="footer-col">
                     <h4 class="footer-title">Меню</h4>
                     <ul class="footer-menu">
-                        <li><a href="index.html">Главная</a></li>
-                        <li><a href="programs.html">Программы</a></li>
-                        <li><a href="about.html">О центре</a></li>
-                        <li><a href="contacts.html">Контакты</a></li>
+                        <li><a href="{{ url_for('index') }}">Главная</a></li>
+                        <li><a href="{{ url_for('programs') }}">Программы</a></li>
+                        <li><a href="{{ url_for('about') }}">О центре</a></li>
+                        <li><a href="{{ url_for('contacts') }}">Контакты</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
                     <h4 class="footer-title">Программы</h4>
                     <ul class="footer-menu">
-                        <li><a href="programs.html#english">Английский язык</a></li>
-                        <li><a href="programs.html#mental">Ментальная арифметика</a></li>
-                        <li><a href="programs.html#reading">Скорочтение</a></li>
-                        <li><a href="programs.html#math">Суперматематика</a></li>
+                        <li><a href="/programs.html#english">Английский язык</a></li>
+                        <li><a href="/programs.html#mental">Ментальная арифметика</a></li>
+                        <li><a href="/programs.html#reading">Скорочтение</a></li>
+                        <li><a href="/programs.html#math">Суперматематика</a></li>
                     </ul>
                 </div>
 
